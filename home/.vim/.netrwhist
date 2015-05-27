@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/justin/.ssh'
+let g:netrw_dirhist_2='/opt/local/apache2/conf'
+let g:netrw_dirhist_3='/opt/local/share/git-core/contrib/git-shell-commands'
+let g:netrw_dirhist_4='/Users/justin/tools/grunt-html/.git'
