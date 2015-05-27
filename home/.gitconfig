@@ -1,0 +1,100 @@
+[user]
+	name = justin blecher
+	email = justin@worksperfectly.net
+
+[core]
+	excludesfile = /Users/justin/.gitignore
+	autocrlf = input
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[apply]
+	whitespace = nowarn
+
+[gui]
+	fontdiff = -family \"Bitstream Vera Sans Mono\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+
+[alias]
+    clonedp = clone --config user.email='jblecher@digitalpulp.com'
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+
+    # show a list of files affected by a particular revision or range
+    # https://mikewest.org/2011/04/a-quick-git-vim-workflow-tip
+    fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
+
+    # show all files changed since branch inception
+    # http://stackoverflow.com/a/19705465/2284440
+    ishow = ! bash -c 'git show --pretty="format:"  --name-only "$(git merge-base "$(git rev-parse --abbrev-ref HEAD)" master)..HEAD" | grep -v "^$" | sort | uniq' -
+
+    # https://gist.github.com/3190119
+    #m = merge --no-commit --no-ff 
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+    who = shortlog -s --
+    k = !gitk
+    x = !gitx
+    alias = !sh -c 'git config --global -l | grep alias | sed s/alias.//g | sort'
+    plr = pull --rebase
+    pl = pull
+    ps = push
+    ss = stash save
+    sp = stash pop
+    ba = branch -a
+    bv = branch -v
+    #brr = !bash -c 'git branch -v | grep -E \"\(ahead|behind\) \"'
+    tip = !sh -c 'git log -n 1 | head -n 1'
+    pso = !bash -l -c 'git pl && g ps origin `echo $(__git_ps1 \"%s\") | cut -d\" \" -f1 | cut -d\"=\" -f1 | cut -d\">\" -f1 | cut -d\"<\" -f1`'
+    sb  = !bash -l -c 'echo -n $(__git_ps1 \"%s\") | cut -d\" \" -f1 | cut -d\"=\" -f1 | cut -d\">\" -f1 | cut -d\"<\" -f1 > ~/.gitsavedbranch'
+    sbm  = !bash -l -c 'git merge `cat ~/.gitsavedbranch`'
+    sbp  = !bash -l -c 'cat ~/.gitsavedbranch'
+    stag = "!f() { g sb && g pso && g co staging-qa$1 && g pl && g merge `cat ~/.gitsavedbranch` && g pso && g co `cat ~/.gitsavedbranch`; }; f"
+    upstag = "!f() { g co master && g pl && for br in 1 2 3 4; do g co staging-qa${br} && g pl && g merge master; done && g push; }; f"
+    # heroku = push heroku master
+    cleanup = !bash -l -c 'source ~/.gitfunctions && branchcleanup'
+	#logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
+	logg = log --graph --date=local --date=iso --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)<%an>%C(reset)' --abbrev-commit
+	loggnc = log --graph --pretty=format:'%h -%d %s (%cD) <%an>' --abbrev-commit
+	logsha = log --pretty=format:'%h'
+
+    # http://stackoverflow.com/a/10773772/2284440
+    branch-point = !sh -c 'merge=$(git rev-list --min-parents=2 --grep="Merge.*$1" --all | tail -1) && git merge-base $merge^1 $merge^2'
+
+
+[diff "ruby"]
+	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+[diff "jpg"]
+    textconv = exif
+    cachetextconv = true
+
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[diff]
+	tool = Kaleidoscope
+	renameLimit = 2048
+	algorithm = patience
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[log]
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[credential]
+	helper = osxkeychain
