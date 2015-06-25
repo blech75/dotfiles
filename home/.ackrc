@@ -1,0 +1,17 @@
+--type-add
+php=.module,.inc,.tpl
+
+--type-add
+ruby=.haml,.yaml,.erb,.rjs,.rake,.rsel,.sass,.less,.liquid,.scss,
+
+--type-add
+java=.jsp,.ftl,.coffee,.conf,.hamlc,.yml,.action,.xml
+
+--type-set
+freemarker=.ftl
+
+#--type-set
+#css=.css
+
+--sort-files
+
