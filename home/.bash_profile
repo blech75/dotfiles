@@ -134,8 +134,8 @@ export PERL5LIB=$PERL5LIB:/Users/justin/.pm
 #export PYTHONPATH='/Library/Frameworks/Python.framework/Versions/2.4/lib/python2.4/site-packages'
 #export PYTHONPATH=/usr/local/lib/python2.6/site-packages/:/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.6/site-packages/
 #export PATH='/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}'
-export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
-export JAVA_HTML='/Library/Java/Home'
+#export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
+#export JAVA_HTML='/Library/Java/Home'
 export PYTHONSTARTUP=~/.pythonstartup
 
 # character set setup
