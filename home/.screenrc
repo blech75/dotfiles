@@ -1,0 +1,7 @@
+startup_message off
+vbell on
+defscrollback 10000
+#shell -$SHELL
+defshell -bash
+hardstatus message "%{=b}%{G} %{b}%w %=%{kG}%C%A"
+
