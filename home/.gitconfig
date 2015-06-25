@@ -60,6 +60,7 @@
     upstag = "!f() { g co master && g pl && for br in 1 2 3 4; do g co staging-qa${br} && g pl && g merge master; done && g push; }; f"
     # heroku = push heroku master
     cleanup = !bash -l -c 'source ~/.gitfunctions && branchcleanup'
+    lg = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)<%an>%C(reset)' --abbrev-commit
 	#logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
 	logg = log --graph --date=local --date=iso --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)<%an>%C(reset)' --abbrev-commit
 	loggnc = log --graph --pretty=format:'%h -%d %s (%cD) <%an>' --abbrev-commit
