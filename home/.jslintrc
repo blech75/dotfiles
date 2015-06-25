@@ -1,0 +1,41 @@
+{
+  "predef": [
+    "$"
+  ],
+  "adsafe":     false,
+  "safe":       false,
+
+  "bitwise":    false,
+  "cap":        false,
+  "confusion":  true,
+  "continue":   true,
+  "css":        true,
+  "debug":      false,
+  "eqeq":       false,
+  "es5":        true,
+  "evil":       false,
+  "forin":      true,
+  "fragment":   true,
+  "newcap":     false,
+  "nomen":      true,
+  "on":         false,
+  "plusplus":   true,
+  "regexp":     false,
+  "sloppy":     true,
+  "sub":        true,
+  "undef":      true,
+  "unparam":    true,
+  "vars":       true,
+  "white":      false,
+
+  "browser":    true,
+  "devel":      true,
+  "node":       false,
+  "rhino":      false,
+  "widget":     false,
+  "windows":    false,
+
+  "indent":     2,
+  "todo":       true,
+  "passfail":   false
+}
