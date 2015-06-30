@@ -10,7 +10,7 @@ GIT_PS1_SHOWCOLORHINTS=true
 
 source /opt/local/share/git/contrib/completion/git-prompt.sh
 
-git_sha() {
+function git_sha() {
   # git log -1 --pretty=format:%h 2> /dev/null
   git rev-parse --short HEAD 2>/dev/null
 }
@@ -39,7 +39,6 @@ COLOR_NONE="\[\e[0m\]"
 
 
 # add nice colored prompt
-
 function composite_ps1() {
   local TIME="${COLOR_GRAY_BOLD}[${COLOR_BLUE_BOLD}\@${COLOR_GRAY_BOLD}]${COLOR_NONE}"
   local HIST="${COLOR_GRAY_BOLD}[${COLOR_YELLOW_BOLD}\!${COLOR_GRAY_BOLD}]${COLOR_NONE}"
@@ -58,7 +57,7 @@ function composite_ps1() {
 }
 
 # http://stackoverflow.com/a/13997892/2284440
-set_bash_prompt(){
+function set_bash_prompt() {
   PS1="\n$(composite_ps1)\n\$ "
 }
 
