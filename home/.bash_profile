@@ -236,3 +236,7 @@ source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 # remind me to keep my dotfiles up to date
 homeshick --quiet refresh
 
+# overcommit setup
+# https://github.com/brigade/overcommit/
+export GIT_TEMPLATE_DIR=`overcommit --template-dir`
+
