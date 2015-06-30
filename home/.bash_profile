@@ -230,3 +230,9 @@ if [ `which grunt` != '' ]; then
   eval "$(grunt --completion=bash)"
 fi
 
+# enable homeshick autocompletion
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+
+# remind me to keep my dotfiles up to date
+homeshick --quiet refresh
+
