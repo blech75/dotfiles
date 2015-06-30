@@ -38,35 +38,6 @@ COLOR_CYAN_BOLD="\[\e[36;1m\]"
 COLOR_NONE="\[\e[0m\]"
 
 
-
-
-# promptFunc()
-# {
-#     PREV_RET_VAL=$?;
-# 
-#     PS1=""
-# 
-#     if test `whoami` != "root"
-#     then
-#         PS1="${PS1}${COLOR_YELLOW_BOLD}\u${COLOR_NONE}"
-#     else
-#         PS1="${PS1}${COLOR_RED_BOLD}\u${COLOR_NONE}"
-#     fi
-# 
-#     PS1="${PS1}@${COLOR_YELLOW_BOLD}\h${COLOR_NONE}"
-#     PS1="${PS1}:${COLOR_YELLOW_BOLD}\w${COLOR_NONE} "
-# 
-#     if test $PREV_RET_VAL -eq 0
-#     then
-#         PS1="${PS1}${COLOR_GREEN_BOLD}\\$ ${COLOR_NONE}"
-#     else
-#         PS1="${PS1}${COLOR_RED_BOLD}\\$ [${PREV_RET_VAL}] ${COLOR_NONE}"
-#     fi
-# }
-# 
-# PROMPT_COMMAND=promptFunc
-
-
 # add nice colored prompt
 
 function composite_ps1() {
@@ -93,7 +64,6 @@ set_bash_prompt(){
 
 # http://superuser.com/a/623305/327091
 PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
-#PROMPT_COMMAND='__git_ps1 "\@ \! \u@\h \w" "\\\$ "; $PROMPT_COMMAND'
 
 
 # currently broken
