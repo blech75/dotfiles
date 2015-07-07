@@ -212,7 +212,7 @@ function lsg {
     ls -la | grep $1
 }
 
-# create instant/temp local http server 
+# create instant/temp local http server
 # from https://gist.github.com/1525217
 localhost() {
   open "http://localhost:${1}" && python -m SimpleHTTPServer $1
@@ -286,4 +286,3 @@ homeshick --quiet refresh
 # overcommit setup
 # https://github.com/brigade/overcommit/
 export GIT_TEMPLATE_DIR=`overcommit --template-dir`
-
