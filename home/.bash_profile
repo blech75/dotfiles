@@ -16,6 +16,74 @@ function git_sha() {
 }
 
 
+# outputs name and status of vagrant machine if passed path is child of a
+# vagrant project
+function vagrant_local_status() {
+  # https://github.com/monochromegane/vagrant-global-status
+  local VGS="vagrant-global-status"
+
+  # this function accepts a single argument, the path to check against
+  # vagrant-global-status.
+  if [ $# -ne 1 ]; then
+    return 1
+  fi
+
+  # note: a fully resolved path (no symlinks) is required because the path that
+  # vagrant-global-status outputs also resolves symlinks.
+  local TARGET_PATH=$1
+
+  # return immediately if we can't find the tool in $PATH
+  if [ "`which $VGS`" = "" ]; then
+    return 1
+  fi
+
+  # capture output of vagrant-global-status. we'll need to process it a few
+  # more times later.
+  local VAGRANT_STATUS="`$VGS`"
+
+  # extract dir paths (5th col)
+  local ALL_VM_PATHS=$(echo "$VAGRANT_STATUS" | awk '{ print $5 }')
+
+  # holds the path to the VM (a parent of TARGET_PATH)
+  local MATCHED_VM_PATH=""
+
+  # attempt to match one one of the paths with TARGET_PATH
+  for p in $ALL_VM_PATHS; do
+    # test if TARGET_PATH is a child dir of a candidate path by attempting to
+    # remove candidate path from begnning of TARGET_PATH, (re-)combining with
+    # candiate path, and checking to see if it's identical to TARGET_PATH.
+    if [ "${p}${TARGET_PATH##$p}" = "$TARGET_PATH" ]; then
+      MATCHED_VM_PATH=$p
+      break
+    fi
+  done
+
+  # bail if we didn't match anything
+  if [ "$MATCHED_VM_PATH" = "" ]; then
+    return 1
+  fi
+
+  # holds entire status line(s). we'll process it later
+  local MATCHED_VM=$(echo "$VAGRANT_STATUS" | grep $MATCHED_VM_PATH)
+
+  # count the number of VMs we've matched, stripping out leading spaces from
+  # wc output
+  local NUM_VMS=$(echo $MATCHED_VM | wc -l | sed -e 's/ //g')
+
+  # FIXME: no multi-machine vagrant right now.
+  # https://docs.vagrantup.com/v2/multi-machine/
+  if [ "${NUM_VMS}" = "1" ]; then
+    # for the line that matches, get extract the desired status info
+    local VM_NAME="$(echo $MATCHED_VM | awk '{ print $2}')"
+    local VM_STATUS="$(echo $MATCHED_VM | awk '{ print $4}')"
+
+    # FIXME: make output more succinct. need to account for all status values
+    # (poweroff|running|saved|...)
+    echo ${VM_NAME}:${VM_STATUS}
+  fi
+
+  return 0;
+}
 
 # define colors so they can be more easily used.
 # include brackets around colors to allow proper line length calculation
@@ -51,6 +119,12 @@ function composite_ps1() {
   if [ "${git_status}" != "" ]; then
     local GIT="${COLOR_GRAY_BOLD}[${COLOR_RED_BOLD}${git_status} @$(git_sha)${COLOR_GRAY_BOLD}]${COLOR_NONE}"
     ps1="${ps1}-${GIT}"
+  fi
+
+  local vagrant_status="$(vagrant_local_status `pwd -P`)"
+  if [ "${vagrant_status}" != "" ]; then
+    local VAGRANT="${COLOR_GRAY_BOLD}[${COLOR_CYAN_BOLD}${vagrant_status}${COLOR_GRAY_BOLD}]${COLOR_NONE}"
+    ps1="${ps1}-${VAGRANT}"
   fi
 
   printf %s "$ps1"
