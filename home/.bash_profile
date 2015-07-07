@@ -85,29 +85,29 @@ function vagrant_local_status() {
   return 0;
 }
 
-# define colors so they can be more easily used.
-# include brackets around colors to allow proper line length calculation
-COLOR_GRAY="\[\e[30;40m\]"
-COLOR_RED="\[\e[31;40m\]"
-COLOR_GREEN="\[\e[32;40m\]"
-COLOR_YELLOW="\[\e[33;40m\]"
-COLOR_BLUE="\[\e[34;40m\]"
-COLOR_MAGENTA="\[\e[35;40m\]"
-COLOR_CYAN="\[\e[36;40m\]"
-
-COLOR_GRAY_BOLD="\[\e[30;1m\]"
-COLOR_RED_BOLD="\[\e[31;1m\]"
-COLOR_GREEN_BOLD="\[\e[32;1m\]"
-COLOR_YELLOW_BOLD="\[\e[33;1m\]"
-COLOR_BLUE_BOLD="\[\e[34;1m\]"
-COLOR_MAGENTA_BOLD="\[\e[35;1m\]"
-COLOR_CYAN_BOLD="\[\e[36;1m\]"
-
-COLOR_NONE="\[\e[0m\]"
-
 
 # add nice colored prompt
 function composite_ps1() {
+  # define colors so they can be more easily used.
+  # include brackets around colors to allow proper line length calculation
+  local COLOR_GRAY="\[\e[30;40m\]"
+  local COLOR_RED="\[\e[31;40m\]"
+  local COLOR_GREEN="\[\e[32;40m\]"
+  local COLOR_YELLOW="\[\e[33;40m\]"
+  local COLOR_BLUE="\[\e[34;40m\]"
+  local COLOR_MAGENTA="\[\e[35;40m\]"
+  local COLOR_CYAN="\[\e[36;40m\]"
+
+  local COLOR_GRAY_BOLD="\[\e[30;1m\]"
+  local COLOR_RED_BOLD="\[\e[31;1m\]"
+  local COLOR_GREEN_BOLD="\[\e[32;1m\]"
+  local COLOR_YELLOW_BOLD="\[\e[33;1m\]"
+  local COLOR_BLUE_BOLD="\[\e[34;1m\]"
+  local COLOR_MAGENTA_BOLD="\[\e[35;1m\]"
+  local COLOR_CYAN_BOLD="\[\e[36;1m\]"
+
+  local COLOR_NONE="\[\e[0m\]"
+
   # define prompt components
   local TIME="${COLOR_GRAY_BOLD}[${COLOR_BLUE_BOLD}\@${COLOR_GRAY_BOLD}]${COLOR_NONE}"
   local HIST="${COLOR_GRAY_BOLD}[${COLOR_YELLOW_BOLD}\!${COLOR_GRAY_BOLD}]${COLOR_NONE}"
