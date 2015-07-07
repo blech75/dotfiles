@@ -22,15 +22,23 @@ function vagrant_local_status() {
   # https://github.com/monochromegane/vagrant-global-status
   local VGS="vagrant-global-status"
 
-  # this function accepts a single argument, the path to check against
-  # vagrant-global-status.
-  if [ $# -ne 1 ]; then
-    return 1
-  fi
-
   # note: a fully resolved path (no symlinks) is required because the path that
   # vagrant-global-status outputs also resolves symlinks.
-  local TARGET_PATH=$1
+  local TARGET_PATH=""
+
+  # this function accepts a single (optional) argument, the path to check
+  # against vagrant-global-status.
+  if [ $# -lt 1 ]; then
+    # resolve symlinks of current dir
+    TARGET_PATH="`pwd -P`"
+
+  # check to see if the passed dir exists
+  elif [[ $# -eq 1 && -d $1 ]]; then
+    # resolve symlinks of passed dir
+    TARGET_PATH="$( cd $1 ; pwd -P )"
+  else
+    return 1
+  fi
 
   # return immediately if we can't find the tool in $PATH
   if [ "`which $VGS`" = "" ]; then
@@ -60,7 +68,8 @@ function vagrant_local_status() {
 
   # bail if we didn't match anything
   if [ "$MATCHED_VM_PATH" = "" ]; then
-    return 1
+    # this is still considered a success
+    return 0
   fi
 
   # holds entire status line(s). we'll process it later
@@ -125,7 +134,7 @@ function composite_ps1() {
   fi
 
   # add vagrant status if we're in a vagrant dir
-  local vagrant_status="$(vagrant_local_status `pwd -P`)"
+  local vagrant_status="$(vagrant_local_status)"
   if [ "${vagrant_status}" != "" ]; then
     local VAGRANT="${COLOR_GRAY_BOLD}[${COLOR_CYAN_BOLD}${vagrant_status}${COLOR_GRAY_BOLD}]${COLOR_NONE}"
     ps1="${ps1}-${VAGRANT}"
