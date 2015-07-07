@@ -65,8 +65,6 @@ function set_bash_prompt() {
 PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 
 
-# currently broken
-#source ~/tools/vagrant-bash/inc/vagrant.sh
 
 
 # history config
