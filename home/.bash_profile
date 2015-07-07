@@ -108,19 +108,23 @@ COLOR_NONE="\[\e[0m\]"
 
 # add nice colored prompt
 function composite_ps1() {
+  # define prompt components
   local TIME="${COLOR_GRAY_BOLD}[${COLOR_BLUE_BOLD}\@${COLOR_GRAY_BOLD}]${COLOR_NONE}"
   local HIST="${COLOR_GRAY_BOLD}[${COLOR_YELLOW_BOLD}\!${COLOR_GRAY_BOLD}]${COLOR_NONE}"
   local USER_HOST="${COLOR_GRAY_BOLD}[${COLOR_GREEN_BOLD}\u@\h${COLOR_GRAY_BOLD}]${COLOR_NONE}"
   local DIR="${COLOR_GRAY_BOLD}[${COLOR_MAGENTA_BOLD}\w${COLOR_GRAY_BOLD}]${COLOR_NONE}"
 
+  # compose the prompt
   local ps1="${TIME}-${HIST}-${USER_HOST}-${DIR}"
 
+  # add git status if we're in a git dir
   local git_status="$(__git_ps1 '%s')"
   if [ "${git_status}" != "" ]; then
     local GIT="${COLOR_GRAY_BOLD}[${COLOR_RED_BOLD}${git_status} @$(git_sha)${COLOR_GRAY_BOLD}]${COLOR_NONE}"
     ps1="${ps1}-${GIT}"
   fi
 
+  # add vagrant status if we're in a vagrant dir
   local vagrant_status="$(vagrant_local_status `pwd -P`)"
   if [ "${vagrant_status}" != "" ]; then
     local VAGRANT="${COLOR_GRAY_BOLD}[${COLOR_CYAN_BOLD}${vagrant_status}${COLOR_GRAY_BOLD}]${COLOR_NONE}"
@@ -140,6 +144,8 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 
 
 
+### set some shell options
+# http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 
 # history config
 export HISTCONTROL=erasedups
