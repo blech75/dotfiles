@@ -195,6 +195,9 @@ export PERL5LIB=$PERL5LIB:/Users/justin/.pm
 export PYTHONSTARTUP=~/.pythonstartup
 export GOPATH=~/.go
 
+# http://stackoverflow.com/a/6588410/2284440
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
 # character set setup
 export LANG='en_US.utf-8'
 #export LC_CTYPE=en_US.UTF-7
