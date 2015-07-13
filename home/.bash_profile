@@ -193,6 +193,7 @@ export PERL5LIB=$PERL5LIB:/Users/justin/.pm
 #export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 #export JAVA_HTML='/Library/Java/Home'
 export PYTHONSTARTUP=~/.pythonstartup
+export GOPATH=~/.go
 
 # character set setup
 export LANG='en_US.utf-8'
