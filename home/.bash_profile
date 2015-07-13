@@ -165,6 +165,8 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# allow for globbing
+shopt -s globstar
 
 
 # path setup
