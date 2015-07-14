@@ -290,3 +290,6 @@ homeshick --quiet refresh
 # overcommit setup
 # https://github.com/brigade/overcommit/
 export GIT_TEMPLATE_DIR=`overcommit --template-dir`
+
+# https://github.com/github/hub#aliasing
+eval "$(hub alias -s)"
