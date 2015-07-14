@@ -253,23 +253,12 @@ alias sc='script/console'
 alias rru='rake radiant:extensions:update_all'
 
 # git shortcuts
-alias gst='git status'
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff | mate'
-alias gds='git diff --staged | mate'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gb='git branch'
-alias gba='git branch -v'
 #alias gsu='git submodule update --init && git submodule foreach git submodule update --init'
 alias gsu='git submodule update --init'
 alias gsb='git submodule foreach git branch'
 alias gsba='git submodule foreach git branch -a'
 alias gssl='git submodule foreach git stash list'
 alias gsst='git submodule foreach "git status || :"'
-alias gss='git stash show'
-alias gsl='git stash list'
 
 
 # fixes the weird require issue with veewee/vagrant
