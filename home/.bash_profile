@@ -266,8 +266,9 @@ alias gsst='git submodule foreach "git status || :"'
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
 
 # rbenv setup
+# commented out because rbenv is installed via macports
+# export PATH="$HOME/.rbenv/bin:$PATH"
 if [ "`which rbenv`" != '' ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
