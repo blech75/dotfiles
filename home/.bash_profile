@@ -271,6 +271,13 @@ if [ "`which rbenv`" != '' ]; then
   eval "$(rbenv init -)"
 fi
 
+# nodenv setup
+# nodenv is installed via source checkout in ~/.nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+if [ "`which nodenv`" != '' ]; then
+  eval "$(nodenv init -)"
+fi
+
 # bash completion setup
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
