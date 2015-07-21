@@ -266,7 +266,7 @@ alias gsst='git submodule foreach "git status || :"'
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
 
 # rbenv setup
-if [ `which rbenv` != '' ]; then
+if [ "`which rbenv`" != '' ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
@@ -277,7 +277,7 @@ if [ -f /opt/local/etc/bash_completion ]; then
 fi
 
 # enable grunt autocomplete
-if [ `which grunt` != '' ]; then
+if [ "`which grunt`" != '' ]; then
   eval "$(grunt --completion=bash)"
 fi
 
