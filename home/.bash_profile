@@ -300,4 +300,6 @@ homeshick --quiet refresh
 export GIT_TEMPLATE_DIR=`overcommit --template-dir`
 
 # https://github.com/github/hub#aliasing
-eval "$(hub alias -s)"
+if [ "`which hub`" != '' ]; then
+  eval "$(hub alias -s)"
+fi
