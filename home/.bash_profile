@@ -280,7 +280,7 @@ fi
 
 # bash completion setup
 if [ -f /opt/local/etc/bash_completion ]; then
-	. /opt/local/etc/bash_completion
+	source /opt/local/etc/bash_completion
 fi
 
 # enable grunt autocomplete
