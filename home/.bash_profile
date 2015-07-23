@@ -179,7 +179,6 @@ macports_path=/opt/local/bin:/opt/local/sbin
 local_path=/usr/local/bin:/usr/local/sbin
 heroku_path=/usr/local/heroku/bin
 export PATH=$home_path:$heroku_path:$vmware_path:$apache_path:$mysql_path:$macports_path:$local_path:$PATH
-launchctl setenv PATH "$PATH"
 
 # other path setup stuff
 export MANPATH=/opt/local/man:$MANPATH
