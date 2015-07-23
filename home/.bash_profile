@@ -243,7 +243,7 @@ alias aprs="sudo /opt/local/apache2/bin/apachectl restart"
 
 # unix shortcuts
 alias rm='rm -i'
-alias rmds='find . -name \.DS_Store -exec rm -rf {} \;'
+alias rmds='find . -name \.DS_Store -delete'
 #alias flushcache='dscacheutil -flushcache'
 
 # rails shortcuts
