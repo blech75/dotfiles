@@ -303,3 +303,6 @@ export GIT_TEMPLATE_DIR=`overcommit --template-dir`
 if [ "`which hub`" != '' ]; then
   eval "$(hub alias -s)"
 fi
+
+# add cabal packages (haskell) to path
+export PATH="$HOME/.cabal/bin:$PATH"
