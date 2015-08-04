@@ -288,6 +288,12 @@ if [ "`which grunt`" != '' ]; then
   eval "$(grunt --completion=bash)"
 fi
 
+# enable npm autocomplete
+if [ "`which npm`" != '' ]; then
+  # https://docs.npmjs.com/cli/completion
+  source <(npm completion)
+fi
+
 # enable homeshick autocompletion
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
