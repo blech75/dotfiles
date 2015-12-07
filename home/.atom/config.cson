@@ -1,0 +1,296 @@
+"*":
+  "exception-reporting":
+    userId: "f38cef70-890d-0450-57ee-977a0f74c61e"
+  "release-notes":
+    viewedVersion: "0.94.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "f9d9fe9a110074874fad3c41525f44889457e520"
+  editor:
+    invisibles: {}
+    showInvisibles: true
+    softWrapHangingIndent: 2
+    scrollPastEnd: true
+    softWrapAtPreferredLineLength: true
+    fontSize: 13
+  core:
+    themes: [
+      "unity-ui"
+      "solarized-dark-syntax"
+    ]
+    disabledPackages: [
+      "linter-jsl"
+      "block-cursor"
+      "title-case"
+      "atom-jade"
+      "git-projects"
+      "language-javascript-semantic"
+      "achievements"
+      "wrap-guide"
+      "linter-js-standard"
+      "pain-split"
+      "linter-scss-lint"
+      "minimap-codeglance"
+      "git-plus"
+      "notational-velocity"
+      "api-blueprint-preview"
+      "linter-js-yaml"
+      "tool-bar"
+      "erb-helper"
+    ]
+    excludeVcsIgnoredPaths: false
+    openEmptyEditorOnStart: false
+  "one-light-ui": {}
+  "file-icons":
+    onChanges: true
+    coloured: false
+  "git-plus": {}
+  linter:
+    ignoredMessageTypes: [
+      "validateIndentation"
+      "disallowMultipleLineBreaks"
+    ]
+    showErrorTabLine: true
+    lintOnFly: false
+  minimap:
+    plugins:
+      "git-diff": true
+      codeglance: true
+      "find-and-replace": true
+      pigments: true
+    displayMinimapOnLeft: true
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  "status-bar": {}
+  "linter-js-standard":
+    style: "semi-standard"
+    honorStyleSettings: true
+    checkStyleDevDependencies: true
+    showEslintRules: true
+  "atom-terminal":
+    surpressDirectoryArgument: false
+  "selector-to-tag": {}
+  "cursor-indicator": {}
+  "block-cursor":
+    selector: "atom-text-editor"
+    scopes: [
+      "*"
+    ]
+    blinkOn:
+      backgroundColor: "#393939"
+      borderStyle: "none"
+      borderColor: "transparent"
+      borderWidth: 0
+    blinkOff:
+      backgroundColor: "transparent"
+      borderStyle: "none"
+      borderColor: "transparent"
+      borderWidth: 0
+    pulseDuration: 0
+    cursorLineFix: false
+    global:
+      blinkOff: {}
+      blinkOn: {}
+  atomatigit: {}
+  "linter-csslint": {}
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+  "autocomplete-plus": {}
+  "git-diff":
+    showIconsInEditorGutter: true
+  "tree-view":
+    sortFoldersBeforeFiles: false
+  "open-recent": {}
+  "git-projects":
+    rootPath: "/Users/justin/projects"
+  "project-ring": {}
+  "inline-autocomplete": {}
+  hex: {}
+  pigments: {}
+  "merge-conflicts": {}
+  "tool-bar":
+    iconSize: "16px"
+    position: "Left"
+    visible: false
+  semanticolor:
+    affectedSourceObjects: {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+  "preview-plus":
+    css: "SCSS"
+    htmlp: true
+  "browser-plus": {}
+  "atom-html-preview":
+    triggerOnSave: true
+  "atom-alignment": {}
+  "linter-htmlhint": {}
+  "linter-jscs":
+    preset: "grunt"
+  "linter-stylint": {}
+  tabs:
+    usePreviewTabs: true
+  "tree-view-git-status": {}
+  "project-manager":
+    sortBy: "title"
+  "markdown-preview":
+    useGitHubStyle: true
+  "atom-css-unit-converter": {}
+  "linter-jshint":
+    lintInlineJavaScript: true
+  "api-blueprint-preview": {}
+  "linter-shellcheck":
+    shellcheckExecutablePath: "/Users/justin/.cabal/bin/shellcheck"
+  "git-hide":
+    hideOnStartup: false
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+      "target"
+      "build"
+      "bower_components"
+    ]
+  "linter-tidy": {}
+  "env-from-shell": {}
+  "toggle-packages": {}
+  "linter-sass-lint": {}
+  achievements: {}
+  "highlight-selected": {}
+  "spell-check": {}
+  "find-and-replace": {}
+  "json-path-finder": {}
+  "jira-issue-search": {}
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+  "imdone-atom": {}
+  "toggle-quotes": {}
+  "linter-js-yaml": {}
+".basic.html.text":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".css.scss.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".null-grammar.plain.text":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".java.source":
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+  editor:
+    preferredLineLength: 132
+".groovy.source":
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+  editor:
+    preferredLineLength: 132
+".slim.text":
+  editor:
+    softWrapHangingIndent: 2
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".js.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".ini.source":
+  editor:
+    softWrapHangingIndent: 2
+".dockerfile.source":
+  editor:
+    softWrapHangingIndent: 2
+".source.yaml":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".js-semantic.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".pyjade.source":
+  editor:
+    softWrapHangingIndent: 2
+".jade.source":
+  editor:
+    softWrapHangingIndent: 2
+".diff.source":
+  editor:
+    softWrapHangingIndent: 2
+".applescript.source":
+  editor:
+    softWrapHangingIndent: 2
+".shell-session.text":
+  editor:
+    softWrapHangingIndent: 2
+".apiary.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".gfm.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".shell.source":
+  editor:
+    softWrapHangingIndent: 2
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".log.source":
+  editor:
+    softWrapHangingIndent: 2
+".json.source":
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+  editor:
+    preferredLineLength: 80
+".diff":
+  editor:
+    softWrapHangingIndent: 2

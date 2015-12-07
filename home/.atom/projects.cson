@@ -1,0 +1,40 @@
+"http-five-o":
+  title: "http-five-o"
+  paths: [
+    "/Users/justin/tools/http-five-o"
+  ]
+"grunt-init-dp-prototype":
+  title: "grunt-init-dp-prototype"
+  paths: [
+    "/Users/justin/tools/grunt-init-dp-prototype"
+  ]
+"nyu-sps-api-sandbox":
+  title: "nyu-sps-api-sandbox"
+  paths: [
+    "/Users/justin/projects.dp/nyu-sps-api-sandbox"
+  ]
+"nyu-sps-prototype":
+  title: "nyu-sps-prototype"
+  paths: [
+    "/Users/justin/projects.dp/nyu-sps-prototype"
+  ]
+"nyu-sps-api-docs":
+  title: "nyu-sps-api-docs"
+  paths: [
+    "/Users/justin/projects.dp/nyu-sps-api-docs"
+  ]
+"docker-aem":
+  title: "docker-aem"
+  paths: [
+    "/Users/justin/tools/docker-aem"
+  ]
+"nyu-sps-html-templates":
+  title: "nyu-sps-html-templates"
+  paths: [
+    "/Users/justin/projects/nyu-sps-html-templates"
+  ]
+"nyu-sps-site":
+  title: "nyu-sps-site"
+  paths: [
+    "/Users/justin/projects.dp/nyu-sps-site"
+  ]
