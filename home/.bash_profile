@@ -8,8 +8,6 @@ GIT_PS1_SHOWUPSTREAM="auto verbose name"
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWCOLORHINTS=true
 
-source /opt/local/share/git/contrib/completion/git-prompt.sh
-
 function git_sha() {
   # git log -1 --pretty=format:%h 2> /dev/null
   git rev-parse --short HEAD 2>/dev/null
