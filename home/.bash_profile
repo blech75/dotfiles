@@ -227,9 +227,16 @@ function lsg {
 }
 
 # create instant/temp local http server
-# from https://gist.github.com/1525217
-localhost() {
-  open "http://localhost:${1}" && python -m SimpleHTTPServer $1
+# from https://gist.github.com/1525217 with a few tweaks by me
+function localhost {
+  local PORT=8000
+  if [ "$1" != "" ]; then
+    PORT=$1
+  fi
+  # counter-intuitive that we want to open the browser before we know the
+  # server is successfully launched, but we need to monitor and kill the server
+  # when we're done.
+  open "http://localhost:${PORT}" && /usr/bin/python -m SimpleHTTPServer $PORT
 }
 
 
