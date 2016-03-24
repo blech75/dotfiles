@@ -1,4 +1,5 @@
 # https://github.com/andsens/homeshick/wiki/Installation
+# TODO: add check to see if local has changes; report them; nag to commit
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # enable git prompt
