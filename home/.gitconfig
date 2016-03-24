@@ -18,6 +18,9 @@
 	fontdiff = -family \"Bitstream Vera Sans Mono\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 
 [alias]
+    fpa = fetch --prune --all
+    mu = merge --ff-only @{u}
+
     clonedp = clone --config user.email='jblecher@digitalpulp.com'
 	st = status
 	ci = commit
