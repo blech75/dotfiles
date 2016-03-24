@@ -168,6 +168,7 @@ shopt -s globstar
 
 
 # path setup
+# FIXME: refactor this to something better
 home_path=$HOME/bin
 apache_path=/opt/local/apache2/bin
 mysql_path=/opt/local/lib/mysql5/bin
@@ -210,6 +211,7 @@ export ANT_ARGS='-find build.xml -l build.log'
 export DP_BUILD_TOOLS_HOME=$HOME/tools/dp-build-tools
 
 # ignore mac os resource forks in zip files
+# FIXME: is this necessary/supported anymore? check current behavior
 #export ZIPOPT="-df"
 
 # add color to directory lists
@@ -219,6 +221,7 @@ alias ls='ls -G'
 
 #man() { man -t "$@" | open -f -a Preview; }
 
+# helper to grep current dir for string
 function lsg {
     ls -la | grep $1
 }
@@ -270,6 +273,7 @@ alias gsst='git submodule foreach "git status || :"'
 
 # rbenv setup
 # rbenv is installed via source checkout in ~/.rbenv
+# FIXME: check for rbenv dir before appending path
  export PATH="$HOME/.rbenv/bin:$PATH"
 if [ "`which rbenv`" != '' ]; then
   eval "$(rbenv init -)"
@@ -277,6 +281,7 @@ fi
 
 # nodenv setup
 # nodenv is installed via source checkout in ~/.nodenv
+# FIXME: check for nodenv dir before appending path
 export PATH="$HOME/.nodenv/bin:$PATH"
 if [ "`which nodenv`" != '' ]; then
   eval "$(nodenv init -)"
@@ -312,6 +317,7 @@ homeshick --quiet refresh
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
+# FIXME: check for overcommit before running/setting
 export GIT_TEMPLATE_DIR=`overcommit --template-dir`
 
 # https://github.com/github/hub#aliasing
@@ -320,8 +326,10 @@ if [ "`which hub`" != '' ]; then
 fi
 
 # add go packages to path
+# FIXME: check for go dir before appending path
 export GOPATH=~/.go
 export PATH="${GOPATH}/bin:$PATH"
 
 # add cabal packages (haskell) to path
+# FIXME: check for cabal dir before appending path
 export PATH="$HOME/.cabal/bin:$PATH"
