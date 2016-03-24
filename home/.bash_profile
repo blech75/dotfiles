@@ -299,6 +299,12 @@ if [ "`which npm`" != '' ]; then
   source <(npm completion)
 fi
 
+# helper function to run node cli executable in context of the package
+# http://stackoverflow.com/a/32059751/2284440
+function npm-exec {
+  $(npm bin)/$@
+}
+
 # enable homeshick autocompletion
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
