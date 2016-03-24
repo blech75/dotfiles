@@ -192,7 +192,6 @@ export PERL5LIB=$PERL5LIB:/Users/justin/.pm
 #export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 #export JAVA_HTML='/Library/Java/Home'
 export PYTHONSTARTUP=~/.pythonstartup
-export GOPATH=~/.go
 
 # http://stackoverflow.com/a/6588410/2284440
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
@@ -319,6 +318,10 @@ export GIT_TEMPLATE_DIR=`overcommit --template-dir`
 if [ "`which hub`" != '' ]; then
   eval "$(hub alias -s)"
 fi
+
+# add go packages to path
+export GOPATH=~/.go
+export PATH="${GOPATH}/bin:$PATH"
 
 # add cabal packages (haskell) to path
 export PATH="$HOME/.cabal/bin:$PATH"
