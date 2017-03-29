@@ -90,6 +90,8 @@
 	tool = Kaleidoscope
 	renameLimit = 2048
 	algorithm = patience
+[difftool "icdiff"]
+    cmd = icdiff $LOCAL $REMOTE | less -R
 [difftool]
 	prompt = false
 [mergetool]
