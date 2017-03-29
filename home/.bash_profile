@@ -161,6 +161,10 @@ export HISTSIZE=10000
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 shopt -s histappend
 
+function hgrep() {
+  history | grep $1
+}
+
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
