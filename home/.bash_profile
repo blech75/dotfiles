@@ -268,6 +268,9 @@ alias gssl='git submodule foreach git stash list'
 alias gsst='git submodule foreach "git status || :"'
 
 
+alias requested-ports='port list requested 2> /dev/null | uniq > ~/.macports/requested'
+
+
 # fixes the weird require issue with veewee/vagrant
 # http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
