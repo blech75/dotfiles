@@ -204,7 +204,7 @@ export PYTHONSTARTUP=~/.pythonstartup
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # character set setup
-export LANG='en_US.utf-8'
+export LANG='en_US.UTF-8'
 #export LC_CTYPE=en_US.UTF-7
 #export KCODE=u
 
