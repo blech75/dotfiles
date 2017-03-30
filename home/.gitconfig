@@ -1,6 +1,7 @@
 [user]
 	name = justin blecher
 	email = justin@worksperfectly.net
+	useconfigonly = true
 
 [core]
 	excludesfile = /Users/justin/.gitignore
@@ -38,7 +39,7 @@
     ishow = ! bash -c 'git show --pretty="format:"  --name-only "$(git merge-base "$(git rev-parse --abbrev-ref HEAD)" master)..HEAD" | grep -v "^$" | sort | uniq' -
 
     # https://gist.github.com/3190119
-    #m = merge --no-commit --no-ff 
+    #m = merge --no-commit --no-ff
 
     #lg = log -p
     #lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -72,10 +73,10 @@
     lg = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
     lgnc = log --pretty=format:'%h [%cd]%d %s (%an)' --abbrev-commit
     lge = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)<%ae>%C(reset)' --abbrev-commit
-	#logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
-	logg = log --graph --date=local --date=iso --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
-	loggnc = log --graph --pretty=format:'%h -%d %s (%cD) <%an>' --abbrev-commit
-	logsha = log --pretty=format:'%h'
+    #logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
+    logg = log --graph --date=local --date=iso --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
+    loggnc = log --graph --pretty=format:'%h -%d %s (%cD) <%an>' --abbrev-commit
+    logsha = log --pretty=format:'%h'
 
     # http://stackoverflow.com/a/10773772/2284440
     branch-point = !sh -c 'merge=$(git rev-list --min-parents=2 --grep="Merge.*$1" --all | tail -1) && git merge-base $merge^1 $merge^2'
