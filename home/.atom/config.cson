@@ -36,6 +36,7 @@
   colornamer:
     format: "snakecase"
   core:
+    closeDeletedFileTabs: true
     disabledPackages: [
       "linter-jsl"
       "block-cursor"
