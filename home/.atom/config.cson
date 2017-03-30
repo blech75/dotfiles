@@ -1,149 +1,92 @@
 "*":
-  "exception-reporting":
-    userId: "f38cef70-890d-0450-57ee-977a0f74c61e"
-  "release-notes":
-    viewedVersion: "0.94.0"
-  welcome:
-    showOnStartup: false
-  metrics:
-    userId: "f9d9fe9a110074874fad3c41525f44889457e520"
-  editor:
-    invisibles: {}
-    showInvisibles: true
-    softWrapHangingIndent: 2
-    scrollPastEnd: true
-    softWrapAtPreferredLineLength: true
-    fontSize: 13
-  core:
-    themes: [
-      "unity-ui"
-      "solarized-dark-syntax"
+  achievements: {}
+  "api-blueprint-preview": {}
+  "atom-alignment": {}
+  "atom-beautify":
+    general:
+      _analyticsUserId: "44a6d8f3-4e2d-4e32-be19-bfd6ebfdd0c8"
+  "atom-css-unit-converter": {}
+  "atom-html-preview":
+    triggerOnSave: true
+  "atom-terminal":
+    surpressDirectoryArgument: false
+  atomatigit: {}
+  "autocomplete-plus": {}
+  "block-cursor":
+    blinkOff:
+      backgroundColor: "transparent"
+      borderColor: "transparent"
+      borderStyle: "none"
+      borderWidth: 0
+    blinkOn:
+      backgroundColor: "#393939"
+      borderColor: "transparent"
+      borderStyle: "none"
+      borderWidth: 0
+    cursorLineFix: false
+    global:
+      blinkOff: {}
+      blinkOn: {}
+    pulseDuration: 0
+    scopes: [
+      "*"
     ]
+    selector: "atom-text-editor"
+  "browser-plus": {}
+  colornamer:
+    format: "snakecase"
+  core:
     disabledPackages: [
       "linter-jsl"
       "block-cursor"
       "title-case"
       "atom-jade"
       "git-projects"
-      "language-javascript-semantic"
       "achievements"
-      "wrap-guide"
       "linter-js-standard"
       "pain-split"
       "linter-scss-lint"
       "minimap-codeglance"
-      "git-plus"
       "notational-velocity"
       "api-blueprint-preview"
       "linter-js-yaml"
       "tool-bar"
       "erb-helper"
+      "wrap-guide"
+      "wrap-guide"
+      "rainbow-tabs"
+      "linter-markdown"
+      "linter-htmlhint"
+      "tree-view-finder"
+      "linter-jscs"
+      "git-wip"
+      "git-time-machine"
+      "linter-ruby"
+      "linter-js-standard-jsx"
     ]
-    excludeVcsIgnoredPaths: false
     openEmptyEditorOnStart: false
-  "one-light-ui": {}
-  "file-icons":
-    onChanges: true
-    coloured: false
-  "git-plus": {}
-  linter:
-    ignoredMessageTypes: [
-      "validateIndentation"
-      "disallowMultipleLineBreaks"
+    telemetryConsent: "limited"
+    themes: [
+      "unity-ui"
+      "base16-tomorrow-dark-theme"
     ]
-    showErrorTabLine: true
-    lintOnFly: false
-  minimap:
-    plugins:
-      "git-diff": true
-      codeglance: true
-      "find-and-replace": true
-      pigments: true
-    displayMinimapOnLeft: true
-  "unity-ui":
-    colorStatusIndicatorsInTreeView: true
-    showIcons: true
-  "status-bar": {}
-  "linter-js-standard":
-    style: "semi-standard"
-    honorStyleSettings: true
-    checkStyleDevDependencies: true
-    showEslintRules: true
-  "atom-terminal":
-    surpressDirectoryArgument: false
-  "selector-to-tag": {}
   "cursor-indicator": {}
-  "block-cursor":
-    selector: "atom-text-editor"
-    scopes: [
-      "*"
-    ]
-    blinkOn:
-      backgroundColor: "#393939"
-      borderStyle: "none"
-      borderColor: "transparent"
-      borderWidth: 0
-    blinkOff:
-      backgroundColor: "transparent"
-      borderStyle: "none"
-      borderColor: "transparent"
-      borderWidth: 0
-    pulseDuration: 0
-    cursorLineFix: false
-    global:
-      blinkOff: {}
-      blinkOn: {}
-  atomatigit: {}
-  "linter-csslint": {}
-  "linter-scss-lint":
-    disableWhenNoConfigFileInPath: true
-  "autocomplete-plus": {}
-  "git-diff":
-    showIconsInEditorGutter: true
-  "tree-view":
-    sortFoldersBeforeFiles: false
-  "open-recent": {}
-  "git-projects":
-    rootPath: "/Users/justin/projects"
-  "project-ring": {}
-  "inline-autocomplete": {}
-  hex: {}
-  pigments: {}
-  "merge-conflicts": {}
-  "tool-bar":
-    iconSize: "16px"
-    position: "Left"
-    visible: false
-  semanticolor:
-    affectedSourceObjects: {}
-  whitespace:
-    ignoreWhitespaceOnCurrentLine: false
-  "preview-plus":
-    css: "SCSS"
-    htmlp: true
-  "browser-plus": {}
-  "atom-html-preview":
-    triggerOnSave: true
-  "atom-alignment": {}
-  "linter-htmlhint": {}
-  "linter-jscs":
-    preset: "grunt"
-  "linter-stylint": {}
-  tabs:
-    usePreviewTabs: true
-  "tree-view-git-status": {}
-  "project-manager":
-    sortBy: "title"
-  "markdown-preview":
-    useGitHubStyle: true
-  "atom-css-unit-converter": {}
-  "linter-jshint":
-    lintInlineJavaScript: true
-  "api-blueprint-preview": {}
-  "linter-shellcheck":
-    shellcheckExecutablePath: "/Users/justin/.cabal/bin/shellcheck"
-  "git-hide":
-    hideOnStartup: false
+  editor:
+    backUpBeforeSaving: true
+    fontSize: 13
+    invisibles: {}
+    preferredLineLength: 72
+    scrollPastEnd: true
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 2
+  "env-from-shell": {}
+  "exception-reporting":
+    userId: "f38cef70-890d-0450-57ee-977a0f74c61e"
+  "file-icons":
+    coloured: false
+    onChanges: true
+  "find-and-replace": {}
   "fuzzy-finder":
     ignoredNames: [
       "node_modules"
@@ -151,146 +94,386 @@
       "build"
       "bower_components"
     ]
-  "linter-tidy": {}
-  "env-from-shell": {}
-  "toggle-packages": {}
-  "linter-sass-lint": {}
-  achievements: {}
+  "git-blame":
+    columnWidth: 225
+    useCustomUrlTemplateIfStandardRemotesFail: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-diff-details":
+    enableSyntaxHighlighting: true
+  "git-hide": {}
+  "git-plus": {}
+  "git-projects":
+    rootPath: "/Users/justin/projects"
+  hex: {}
   "highlight-selected": {}
-  "spell-check": {}
-  "find-and-replace": {}
-  "json-path-finder": {}
+  "imdone-atom":
+    openIn: {}
+    todaysJournal: {}
+  "inline-autocomplete": {}
   "jira-issue-search": {}
-  "multi-wrap-guide":
-    columns: [
-      72
-      80
-      132
-    ]
-  "imdone-atom": {}
-  "toggle-quotes": {}
+  "json-path-finder": {}
+  linter: {}
+  "linter-csslint": {}
+  "linter-eslint":
+    globalNodePath: "/Users/justin/.nodenv/versions/4.8.0"
+    useGlobalEslint: true
+  "linter-htmlhint": {}
+  "linter-javac": {}
+  "linter-js-standard":
+    checkStyleDevDependencies: true
+    honorStyleSettings: true
+    showEslintRules: true
+    style: "semi-standard"
+  "linter-js-standard-jsx":
+    showEslintRules: true
   "linter-js-yaml": {}
+  "linter-jscs":
+    preset: "grunt"
+  "linter-jshint":
+    lintInlineJavaScript: true
+  "linter-rubocop":
+    command: "/Users/justin/.rbenv/versions/2.3.1/bin/rubocop"
+  "linter-sass-lint": {}
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+  "linter-shellcheck":
+    shellcheckExecutablePath: "/Users/justin/.cabal/bin/shellcheck"
+  "linter-stylint": {}
+  "linter-tidy": {}
+  "linter-ui-default":
+    showPanel: true
+  "markdown-preview":
+    useGitHubStyle: true
+  "merge-conflicts": {}
+  metrics:
+    userId: "f9d9fe9a110074874fad3c41525f44889457e520"
+  minimap:
+    displayMinimapOnLeft: true
+    plugins:
+      codeglance: true
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+  "one-light-ui": {}
+  "open-recent": {}
+  pigments: {}
+  "prettier-atom":
+    prettierOptions:
+      singleQuote: true
+  "preview-plus":
+    css: "SCSS"
+    htmlp: true
+  "project-manager":
+    sortBy: "title"
+  "project-ring": {}
+  "release-notes":
+    viewedVersion: "0.94.0"
+  "selector-to-tag": {}
+  semanticolor:
+    affectedSourceObjects: {}
+  "spell-check": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+    syncHorizontalScroll: true
+  "status-bar": {}
+  tabs:
+    usePreviewTabs: true
+  "todo-show":
+    sortBy: "Type"
+  "toggle-packages": {}
+  "toggle-quotes": {}
+  "tool-bar":
+    iconSize: "16px"
+    position: "Left"
+    visible: false
+  "tree-view":
+    hideIgnoredNames: true
+    sortFoldersBeforeFiles: false
+  "tree-view-git-status": {}
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".apache-config.source":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".apiary.source":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".applescript.source":
+  editor:
+    softWrapHangingIndent: 2
+".attribute-values.js.jsx.source":
+  editor:
+    preferredLineLength: 78
 ".basic.html.text":
+  editor:
+    preferredLineLength: 78
   "multi-wrap-guide":
     columns: [
-      80
+      78
     ]
-  editor:
-    preferredLineLength: 80
 ".css.scss.source":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
   editor:
     preferredLineLength: 80
-".null-grammar.plain.text":
   "multi-wrap-guide":
     columns: [
       80
     ]
-  editor:
-    preferredLineLength: 80
-".java.source":
-  "multi-wrap-guide":
-    columns: [
-      72
-      80
-      132
-    ]
-  editor:
-    preferredLineLength: 132
-".groovy.source":
-  "multi-wrap-guide":
-    columns: [
-      72
-      80
-      132
-    ]
-  editor:
-    preferredLineLength: 132
-".slim.text":
-  editor:
-    softWrapHangingIndent: 2
-    preferredLineLength: 80
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-".js.source":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-  editor:
-    preferredLineLength: 80
-".ini.source":
-  editor:
-    softWrapHangingIndent: 2
-".dockerfile.source":
-  editor:
-    softWrapHangingIndent: 2
-".source.yaml":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-  editor:
-    preferredLineLength: 80
-".js-semantic.source":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-  editor:
-    preferredLineLength: 80
-".pyjade.source":
-  editor:
-    softWrapHangingIndent: 2
-".jade.source":
+".diff":
   editor:
     softWrapHangingIndent: 2
 ".diff.source":
   editor:
     softWrapHangingIndent: 2
-".applescript.source":
+".dockerfile.source":
+  editor:
+    preferredLineLength: 132
+    softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      72
+      81
+      132
+    ]
+".editorconfig.source":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".erb.html.text":
+  editor:
+    preferredLineLength: 130
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      130
+    ]
+".gfm.source":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".git-commit.text":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".git-config.source":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".git-rebase.text":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".groovy.source":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".html.jsp.text":
+  editor:
+    preferredLineLength: 132
+    softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".html.ruby.text":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".ini.source":
   editor:
     softWrapHangingIndent: 2
+".jade.source":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".java-properties.source":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".java.source":
+  editor:
+    preferredLineLength: 132
+    softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      73
+      81
+      132
+    ]
+".js-semantic.source":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".js.jsx.react.source":
+  editor:
+    preferredLineLength: 78
+".js.jsx.source":
+  editor:
+    preferredLineLength: 78
+  "multi-wrap-guide":
+    columns: [
+      78
+    ]
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 78
+".js.source":
+  editor:
+    preferredLineLength: 78
+  "multi-wrap-guide":
+    columns: [
+      78
+    ]
+".js.source.subtlegradient":
+  editor:
+    preferredLineLength: 78
+".json.source":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".junit-test-report.text":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".log.source":
+  editor:
+    preferredLineLength: 132
+    softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      72
+      89
+      132
+    ]
+".null-grammar.plain.text":
+  editor:
+    preferredLineLength: 80
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".plain.text":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".pyjade.source":
+  editor:
+    preferredLineLength: 72
+    softWrapHangingIndent: 2
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 132
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 132
+".ruby.source":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
+".ruby.source.sql":
+  editor:
+    preferredLineLength: 132
+".sass.source":
+  editor:
+    preferredLineLength: 132
+  "multi-wrap-guide":
+    columns: [
+      72
+      80
+      132
+    ]
 ".shell-session.text":
   editor:
     softWrapHangingIndent: 2
-".apiary.source":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-  editor:
-    preferredLineLength: 80
-".gfm.source":
-  "multi-wrap-guide":
-    columns: [
-      80
-    ]
-  editor:
-    preferredLineLength: 80
 ".shell.source":
   editor:
+    preferredLineLength: 79
     softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      79
+    ]
+".slim.text":
+  editor:
+    preferredLineLength: 80
+    softWrapHangingIndent: 2
+  "multi-wrap-guide":
+    columns: [
+      80
+    ]
+".source.yaml":
+  editor:
     preferredLineLength: 80
   "multi-wrap-guide":
     columns: [
       80
     ]
-".log.source":
+".text.xml":
   editor:
-    softWrapHangingIndent: 2
-".json.source":
+    preferredLineLength: 132
   "multi-wrap-guide":
     columns: [
+      71
       80
+      132
     ]
-  editor:
-    preferredLineLength: 80
-".diff":
-  editor:
-    softWrapHangingIndent: 2
