@@ -118,3 +118,5 @@
 	required = true
 [push]
 	default = current
+[log]
+	mailmap = true
