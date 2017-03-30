@@ -119,3 +119,5 @@
 	default = current
 [log]
 	mailmap = true
+[atom "open-on-github"]
+	remote = github
