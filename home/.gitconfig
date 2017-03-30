@@ -80,13 +80,12 @@
     # http://stackoverflow.com/a/10773772/2284440
     branch-point = !sh -c 'merge=$(git rev-list --min-parents=2 --grep="Merge.*$1" --all | tail -1) && git merge-base $merge^1 $merge^2'
 
-
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+
 [diff "jpg"]
     textconv = exif
     cachetextconv = true
-
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
