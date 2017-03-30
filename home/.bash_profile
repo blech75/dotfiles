@@ -318,11 +318,18 @@ function npm-exec {
   $(npm bin)/$@
 }
 
+
 # enable homeshick autocompletion
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-# remind me to keep my dotfiles up to date
-homeshick --quiet refresh
+# remind me to keep my dotfiles up to date daily
+homeshick --quiet check dotfiles --local-only
+if [[ $? -eq 88 ]]; then
+  echo
+  echo "Rememeber to commit your dotfiles!"
+  (homeshick cd dotfiles && git status --short)
+fi
+
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
