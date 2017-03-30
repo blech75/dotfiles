@@ -166,6 +166,9 @@
     ]
   "one-light-ui": {}
   "open-recent": {}
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments: {}
   "prettier-atom":
     prettierOptions:
