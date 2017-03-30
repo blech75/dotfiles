@@ -22,7 +22,8 @@
     mu = merge --ff-only @{u}
 
     clonedp = clone --config user.email='jblecher@digitalpulp.com'
-	st = status
+
+	st = status --short
 	ci = commit
 	br = branch
 	co = checkout
@@ -38,9 +39,11 @@
 
     # https://gist.github.com/3190119
     #m = merge --no-commit --no-ff 
-    lg = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+    #lg = log -p
+    #lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    #lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
     ls = ls-files
     who = shortlog -s --
     k = !gitk
@@ -61,9 +64,13 @@
     sbp  = !bash -l -c 'cat ~/.gitsavedbranch'
     stag = "!f() { g sb && g pso && g co staging-qa$1 && g pl && g merge `cat ~/.gitsavedbranch` && g pso && g co `cat ~/.gitsavedbranch`; }; f"
     upstag = "!f() { g co master && g pl && for br in 1 2 3 4; do g co staging-qa${br} && g pl && g merge master; done && g push; }; f"
+
     # heroku = push heroku master
+
     cleanup = !bash -l -c 'source ~/.gitfunctions && branchcleanup'
+
     lg = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
+    lgnc = log --pretty=format:'%h [%cd]%d %s (%an)' --abbrev-commit
     lge = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)<%ae>%C(reset)' --abbrev-commit
 	#logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit
 	logg = log --graph --date=local --date=iso --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
