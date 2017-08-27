@@ -1,0 +1,38 @@
+autoconf 2.69
+awscli 1.11.138 1.11.72
+bash 4.4.12
+bash-completion 1.3_2
+bash-git-prompt 2.6.2 2.6.3
+brew-cask-completion 2.1
+git 2.12.2 2.14.1
+git-extras 4.4.0
+htop 2.0.2
+jq 1.5_2
+libevent 2.1.8
+nginx 1.10.3 1.12.1
+node-build 2.5.9 2.6.11
+nodenv 1.1.0 1.1.2
+nodenv-aliases 1.1.1
+nodenv-package-json-engine 1.1.1
+nodenv-package-rehash 1.0.2
+nodenv-update 0.2.0
+nodenv-vars 1.2.0
+oniguruma 6.2.0 6.5.0
+openssl 1.0.2k 1.0.2l
+openssl@1.1 1.1.0e 1.1.0f
+pcre 8.40 8.41
+pkg-config 0.29.2
+rbenv 1.1.0
+rbenv-aliases 1.1.0
+rbenv-bundler-ruby-version 0.3.1
+rbenv-use 1.0.0
+rbenv-vars 1.2.0
+rbenv-whatis 1.0.0
+readline 7.0.3_1
+ruby-build 20170322
+the_silver_searcher 1.0.2
+tmux 2.5
+tmux-mem-cpu-load 3.4.0
+vagrant-completion 1.9.7
+xz 5.2.3
+youtube-dl 2017.08.18

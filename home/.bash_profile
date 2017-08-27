@@ -227,7 +227,24 @@ alias gssl='git submodule foreach git stash list'
 alias gsst='git submodule foreach "git status || :"'
 
 
-alias requested-ports='port list requested 2> /dev/null | uniq > ~/.macports/requested'
+# keep track of installed macports packages
+if [ "`which ports`" != '' ]; then
+  function requested-ports() {
+    port list requested 2> /dev/null | uniq > ~/.macports/requested
+  }
+
+  requested-ports
+fi
+
+
+# keep track of installed homebrew formulae
+if [ "`which brew`" != '' ]; then
+  function installed-brews() {
+    brew list --versions --full-name > ~/.homebrew-installed
+  }
+
+  installed-brews
+fi
 
 
 # fixes the weird require issue with veewee/vagrant
