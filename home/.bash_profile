@@ -16,10 +16,12 @@ GIT_PS1_SHOWUPSTREAM="auto verbose name"
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWCOLORHINTS=true
 
-function git_sha() {
-  # git log -1 --pretty=format:%h 2> /dev/null
-  git rev-parse --short HEAD 2>/dev/null
-}
+# enable custom git prompt
+if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Custom
+  __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
+  source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 
 # outputs name and status of vagrant machine if passed path is child of a
@@ -99,64 +101,6 @@ function vagrant_local_status() {
 
   return 0;
 }
-
-
-# add nice colored prompt
-function composite_ps1() {
-  # define colors so they can be more easily used.
-  # include brackets around colors to allow proper line length calculation
-  local COLOR_GRAY="\[\e[30;40m\]"
-  local COLOR_RED="\[\e[31;40m\]"
-  local COLOR_GREEN="\[\e[32;40m\]"
-  local COLOR_YELLOW="\[\e[33;40m\]"
-  local COLOR_BLUE="\[\e[34;40m\]"
-  local COLOR_MAGENTA="\[\e[35;40m\]"
-  local COLOR_CYAN="\[\e[36;40m\]"
-
-  local COLOR_GRAY_BOLD="\[\e[30;1m\]"
-  local COLOR_RED_BOLD="\[\e[31;1m\]"
-  local COLOR_GREEN_BOLD="\[\e[32;1m\]"
-  local COLOR_YELLOW_BOLD="\[\e[33;1m\]"
-  local COLOR_BLUE_BOLD="\[\e[34;1m\]"
-  local COLOR_MAGENTA_BOLD="\[\e[35;1m\]"
-  local COLOR_CYAN_BOLD="\[\e[36;1m\]"
-
-  local COLOR_NONE="\[\e[0m\]"
-
-  # define prompt components
-  local TIME="${COLOR_GRAY_BOLD}[${COLOR_BLUE_BOLD}\@${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-  local HIST="${COLOR_GRAY_BOLD}[${COLOR_YELLOW_BOLD}\!${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-  local USER_HOST="${COLOR_GRAY_BOLD}[${COLOR_GREEN_BOLD}\u@\h${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-  local DIR="${COLOR_GRAY_BOLD}[${COLOR_MAGENTA_BOLD}\w${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-
-  # compose the prompt
-  local ps1="${TIME}-${HIST}-${USER_HOST}-${DIR}"
-
-  # add git status if we're in a git dir
-  local git_status="$(__git_ps1 '%s')"
-  if [ "${git_status}" != "" ]; then
-    local GIT="${COLOR_GRAY_BOLD}[${COLOR_RED_BOLD}${git_status} @$(git_sha)${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-    ps1="${ps1}-${GIT}"
-  fi
-
-  # add vagrant status if we're in a vagrant dir
-  local vagrant_status="$(vagrant_local_status)"
-  if [ "${vagrant_status}" != "" ]; then
-    local VAGRANT="${COLOR_GRAY_BOLD}[${COLOR_CYAN_BOLD}${vagrant_status}${COLOR_GRAY_BOLD}]${COLOR_NONE}"
-    ps1="${ps1}-${VAGRANT}"
-  fi
-
-  printf %s "$ps1"
-}
-
-# http://stackoverflow.com/a/13997892/2284440
-function set_bash_prompt() {
-  PS1="\n$(composite_ps1)\n\$ "
-}
-
-# http://superuser.com/a/623305/327091
-PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
-
 
 
 ### set some shell options
