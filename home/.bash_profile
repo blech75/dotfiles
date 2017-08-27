@@ -164,10 +164,6 @@ export LANG='en_US.UTF-8'
 # export RC_ARCHS='i386'
 export RC_ARCHS=`uname -m`
 
-# DP build tools setup
-export ANT_ARGS='-find build.xml -l build.log'
-export DP_BUILD_TOOLS_HOME=$HOME/tools/dp-build-tools
-
 # ignore mac os resource forks in zip files
 # FIXME: is this necessary/supported anymore? check current behavior
 #export ZIPOPT="-df"
@@ -203,18 +199,10 @@ function localhost {
 alias js="java org.mozilla.javascript.tools.shell.Main"
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
 
-# apache shortcuts
-alias aprs="sudo /opt/local/apache2/bin/apachectl restart"
-
 # unix shortcuts
 alias rm='rm -i'
 alias rmds='find . -name \.DS_Store -delete'
 #alias flushcache='dscacheutil -flushcache'
-
-# rails shortcuts
-alias ss='script/server'
-alias sc='script/console'
-alias rru='rake radiant:extensions:update_all'
 
 # git shortcuts
 ## TODO: port this to gitconfig
@@ -254,7 +242,7 @@ fi
 # rbenv setup
 # rbenv is installed via source checkout in ~/.rbenv
 # FIXME: check for rbenv dir before appending path
- export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 if [ "`which rbenv`" != '' ]; then
   eval "$(rbenv init -)"
 fi
