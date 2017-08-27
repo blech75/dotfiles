@@ -290,8 +290,9 @@ fi
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
-# FIXME: check for overcommit before running/setting
-export GIT_TEMPLATE_DIR=`overcommit --template-dir`
+if [ "`which overcommit`" != '' ]; then
+  export GIT_TEMPLATE_DIR=`overcommit --template-dir`
+fi
 
 # https://github.com/github/hub#aliasing
 if [ "`which hub`" != '' ]; then
