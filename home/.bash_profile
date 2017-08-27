@@ -120,6 +120,7 @@ function hgrep() {
 shopt -s checkwinsize
 
 # allow for globbing
+# requires bash 4.x
 shopt -s globstar
 
 
@@ -216,6 +217,8 @@ alias sc='script/console'
 alias rru='rake radiant:extensions:update_all'
 
 # git shortcuts
+## TODO: port this to gitconfig
+#
 #alias gsu='git submodule update --init && git submodule foreach git submodule update --init'
 alias gsu='git submodule update --init'
 alias gsb='git submodule foreach git branch'
