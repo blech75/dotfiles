@@ -9,13 +9,6 @@ else
   brew_prefix=""
 fi
 
-# enable git prompt
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM="auto verbose name"
-GIT_PS1_DESCRIBE_STYLE="branch"
-GIT_PS1_SHOWCOLORHINTS=true
-
 # enable custom git prompt
 if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Custom
