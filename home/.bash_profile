@@ -2,6 +2,13 @@
 # TODO: add check to see if local has changes; report them; nag to commit
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
+# grab homebrew prefix if it's installed
+if [ "`which brew`" != '' ]; then
+  brew_prefix="$(brew --prefix)"
+else
+  brew_prefix=""
+fi
+
 # enable git prompt
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -296,7 +303,12 @@ if [ "`which nodenv`" != '' ]; then
   eval "$(nodenv init -)"
 fi
 
-# bash completion setup
+# bash completion setup (homebrew)
+if [ -f ${brew_prefix}/etc/bash_completion ]; then
+	source ${brew_prefix}/etc/bash_completion
+fi
+
+# bash completion setup (macports)
 if [ -f /opt/local/etc/bash_completion ]; then
 	source /opt/local/etc/bash_completion
 fi
