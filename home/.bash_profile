@@ -9,13 +9,6 @@ else
   brew_prefix=""
 fi
 
-# enable custom git prompt
-if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Custom
-  __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
-  source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-
 
 # outputs name and status of vagrant machine if passed path is child of a
 # vagrant project
@@ -94,6 +87,14 @@ function vagrant_local_status() {
 
   return 0;
 }
+
+
+# enable custom git prompt
+if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Custom
+  __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
+  source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 
 ### set some shell options
