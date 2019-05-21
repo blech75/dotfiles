@@ -251,6 +251,15 @@ if [ "`which nodenv`" != '' ]; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
+# pyenv setup
+# pyenv is installed via brew
+# FIXME: check for pyenv dir before appending path
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#if [ "`which pyenv`" != '' ]; then
+#  eval "$(pyenv init -)"
+#fi
+
+
 # bash completion setup (homebrew)
 if [ -f ${brew_prefix}/etc/bash_completion ]; then
 	source ${brew_prefix}/etc/bash_completion
