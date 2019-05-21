@@ -20,12 +20,18 @@
 
 [alias]
     fpa = fetch --prune --all
-    mu = merge --ff-only @{u}
+    # mu = merge --ff-only @{u}
+    mu = !bash -c 'git merge --ff-only @{u} && echo && echo "Newly-added commits:" && git lg HEAD@{1}..'
+    # cu = merge --ff-only master
+    cu = !bash -c 'git merge --ff-only master && echo && echo "Newly-added commits:" && git lg HEAD@{1}..'
+    # cur = merge --ff-only github/master
+    cur = !bash -c 'git merge --ff-only github/master && echo && echo "Newly-added commits:" && git lg HEAD@{1}..'
 
 	st = status --short
 	ci = commit
 	br = branch
 	co = checkout
+	com = checkout master
 	df = diff
 
     # show a list of files affected by a particular revision or range
@@ -66,7 +72,7 @@
 
     # heroku = push heroku master
 
-    cleanup = !bash -l -c 'source ~/.gitfunctions && branchcleanup'
+    # cleanup = !bash -l -c 'source ~/.gitfunctions && branchcleanup'
 
     lg = log --pretty=format:'%C(red)%h %C(green)[%cd]%C(reset)%C(yellow)%d%C(reset) %s %C(bold blue)(%an)%C(reset)' --abbrev-commit
     lgnc = log --pretty=format:'%h [%cd]%d %s (%an)' --abbrev-commit
@@ -76,8 +82,17 @@
     loggnc = log --graph --pretty=format:'%h -%d %s (%cD) <%an>' --abbrev-commit
     logsha = log --pretty=format:'%h'
 
+    # out of date
+    ood = !bash -c 'git lg ..github/master'
+
+    # log branch
+    lgb = !bash -c 'git lg master..'
+
     # http://stackoverflow.com/a/10773772/2284440
     branch-point = !sh -c 'merge=$(git rev-list --min-parents=2 --grep="Merge.*$1" --all | tail -1) && git merge-base $merge^1 $merge^2'
+
+    # merge-base master
+    mbm = !bash -c 'git lg -1 $(git merge-base -a master $0)'
 
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
