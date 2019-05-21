@@ -309,4 +309,4 @@ export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 
 # add cabal packages (haskell) to path
 # FIXME: check for cabal dir before appending path
-export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="${HOME}/.cabal/bin:${PATH}"
