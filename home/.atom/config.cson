@@ -37,6 +37,7 @@
     format: "snakecase"
   core:
     closeDeletedFileTabs: true
+    destroyEmptyPanes: false
     disabledPackages: [
       "linter-jsl"
       "block-cursor"
@@ -64,6 +65,10 @@
       "git-time-machine"
       "linter-ruby"
       "linter-js-standard-jsx"
+      "linter-javac"
+      "tidy-markdown"
+      "language-javascript-jsx"
+      "parcel"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
@@ -97,6 +102,7 @@
     ]
   "git-blame":
     columnWidth: 225
+    customCommitUrlTemplateString: "https://github.com/<%- project %>/<%- repo %>/commit/<%- revision %>"
     useCustomUrlTemplateIfStandardRemotesFail: true
   "git-diff":
     showIconsInEditorGutter: true
@@ -143,6 +149,7 @@
   "linter-stylint": {}
   "linter-tidy": {}
   "linter-ui-default":
+    panelHeight: 155
     showPanel: true
   "markdown-preview":
     useGitHubStyle: true
@@ -150,14 +157,14 @@
   metrics:
     userId: "f9d9fe9a110074874fad3c41525f44889457e520"
   minimap:
-    displayMinimapOnLeft: true
+    adjustAbsoluteModeHeight: true
     plugins:
       codeglance: true
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
       "git-diffDecorationsZIndex": 0
-      pigments: true
+      pigments: false
       pigmentsDecorationsZIndex: 0
   "multi-wrap-guide":
     columns: [
@@ -185,7 +192,15 @@
   "selector-to-tag": {}
   semanticolor:
     affectedSourceObjects: {}
-  "spell-check": {}
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "comment.*"
+    ]
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -205,7 +220,6 @@
     position: "Left"
     visible: false
   "tree-view":
-    hideIgnoredNames: true
     sortFoldersBeforeFiles: false
   "tree-view-git-status": {}
   "unity-ui":
