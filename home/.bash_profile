@@ -302,8 +302,8 @@ fi
 
 # add go packages to path
 # FIXME: check for go dir before appending path
-export GOPATH=~/.go
-export PATH="${GOPATH}/bin:$PATH"
+export GOPATH="~/.go"
+export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 
 # add cabal packages (haskell) to path
 # FIXME: check for cabal dir before appending path
