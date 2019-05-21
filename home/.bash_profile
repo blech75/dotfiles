@@ -133,7 +133,7 @@ export PATH=$home_path:$heroku_path:$vmware_path:$apache_path:$mysql_path:$pgsql
 
 # other path setup stuff
 export MANPATH=/opt/local/man:$MANPATH
-export CVSROOT=/Users/justin/.CVS
+# export CVSROOT=/Users/justin/.CVS
 #export VIMRUNTIME=/Users/justin/.vim
 #export PKG_CONFIG_PATH=/sw/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig
 #export DYLD_LIBRARY_PATH=/opt/local/lib:/opt/local/var/macports/software/ImageMagick/6.3.1-4_0+darwin_8/opt/local/lib/:$DYLD_LIBRARY_PATH
@@ -147,7 +147,7 @@ export PERL5LIB=$PERL5LIB:/Users/justin/.pm
 export PYTHONSTARTUP=~/.pythonstartup
 
 # http://stackoverflow.com/a/6588410/2284440
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # character set setup
 export LANG='en_US.UTF-8'
