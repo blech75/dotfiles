@@ -22,8 +22,6 @@
     fpa = fetch --prune --all
     mu = merge --ff-only @{u}
 
-    clonedp = clone --config user.email='jblecher@digitalpulp.com'
-
 	st = status --short
 	ci = commit
 	br = branch
