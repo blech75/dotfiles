@@ -1,38 +1,71 @@
 autoconf 2.69
-awscli 1.11.138 1.11.72
-bash 4.4.12
-bash-completion 1.3_2
-bash-git-prompt 2.6.2 2.6.3
-brew-cask-completion 2.1
-git 2.12.2 2.14.1
-git-extras 4.4.0
-htop 2.0.2
-jq 1.5_2
+awscli 1.16.150
+bash 4.4.12 4.4.19 4.4.23
+bash-completion 1.3_3
+bash-git-prompt 2.7.1
+brew-cask-completion 2.1_1
+dashing 0.3.0
+elixir 1.6.3
+erlang 20.2.4
+gdbm 1.18.1
+gettext 0.19.8.1
+git 2.21.0
+git-extras 4.7.0
+givegif 1.0.0.0
+go 1.9
+highlight 3.48
+htop 2.2.0_1
+hub 2.11.2
+icu4c 64.2
+ipython@5 5.8.0
+jpeg 9c
+jq 1.6
 libevent 2.1.8
-nginx 1.10.3 1.12.1
-node-build 2.5.9 2.6.11
-nodenv 1.1.0 1.1.2
-nodenv-aliases 1.1.1
-nodenv-package-json-engine 1.1.1
-nodenv-package-rehash 1.0.2
-nodenv-update 0.2.0
+libidn2 2.1.1a
+libpng 1.6.34
+libtiff 4.0.9_2
+libunistring 0.9.10
+lua 5.3.5_1
+mongodb 3.6.3
+multitail 6.4.2
+ncurses 6.1
+nginx 1.15.12
+node 12.1.0
+node-build 4.5.0
+node-build-update-defs 2.9.1
+nodenv 1.3.0
+nodenv-aliases 2.0.1
+nodenv-package-json-engine 3.0.3
+nodenv-package-rehash 1.4.0
 nodenv-vars 1.2.0
-oniguruma 6.2.0 6.5.0
-openssl 1.0.2k 1.0.2l
+oniguruma 6.9.1
+openssl 1.0.2r
 openssl@1.1 1.1.0e 1.1.0f
-pcre 8.40 8.41
+packer 1.4.0
+pcre 8.43
+pcre2 10.32
 pkg-config 0.29.2
-rbenv 1.1.0
-rbenv-aliases 1.1.0
-rbenv-bundler-ruby-version 0.3.1
-rbenv-use 1.0.0
-rbenv-vars 1.2.0
-rbenv-whatis 1.0.0
-readline 7.0.3_1
-ruby-build 20170322
-the_silver_searcher 1.0.2
-tmux 2.5
+python 3.7.3
+python@2 2.7.16
+rbenv 1.1.2
+rbenv-aliases 1.1.0_1
+rbenv-bundler-ruby-version 1.0.0_1
+rbenv-use 1.0.0_1
+rbenv-vars 1.2.0_1
+rbenv-whatis 1.0.0_1
+readline 8.0.0_1
+redis 5.0.4
+ruby-build 20190423
+shellcheck 0.6.0_1
+sqlite 3.28.0
+the_silver_searcher 2.2.0
+tmux 2.9a
 tmux-mem-cpu-load 3.4.0
-vagrant-completion 1.9.7
-xz 5.2.3
-youtube-dl 2017.08.18
+tree 1.8.0
+vagrant-completion 2.2.4
+wget 1.20.3
+wxmac 3.0.3.1_1
+xz 5.2.4
+yarn 1.16.0
+youtube-dl 2019.05.11
+zeromq 4.3.1_1
