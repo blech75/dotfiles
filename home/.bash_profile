@@ -241,12 +241,14 @@ if [ "`which rbenv`" != '' ]; then
   eval "$(rbenv init -)"
 fi
 
+export NODE_BUILD_DEFINITIONS="/usr/local/opt/node-build-update-defs/share/node-build"
+
 # nodenv setup
-# nodenv is installed via source checkout in ~/.nodenv
+# nodenv is installed via brew
 # FIXME: check for nodenv dir before appending path
 export PATH="$HOME/.nodenv/bin:$PATH"
 if [ "`which nodenv`" != '' ]; then
-  eval "$(nodenv init -)"
+  eval "$(nodenv init - --no-rehash)"
 fi
 
 # bash completion setup (homebrew)
