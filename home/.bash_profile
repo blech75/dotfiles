@@ -295,7 +295,7 @@ fi
 # helper function to run node cli executable in context of the package
 # http://stackoverflow.com/a/32059751/2284440
 function npm-exec {
-  $(npm bin)/$@
+  $(npm bin)/$*
 }
 
 
