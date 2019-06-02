@@ -222,14 +222,14 @@ alias gssl='git submodule foreach git stash list'
 alias gsst='git submodule foreach "git status || :"'
 
 
-# keep track of installed macports packages
-if [ "`which ports`" != '' ]; then
-  function requested-ports() {
-    port list requested 2> /dev/null | uniq > ~/.macports/requested
-  }
+# # keep track of installed macports packages
+# if [ "`which ports`" != '' ]; then
+#   function requested-ports() {
+#     port list requested 2> /dev/null | uniq > ~/.macports/requested
+#   }
 
-  requested-ports
-fi
+#   requested-ports
+# fi
 
 
 # keep track of installed homebrew formulae
@@ -260,13 +260,11 @@ if [ "$(command -v nodenv)" != '' ]; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-# pyenv setup
-# pyenv is installed via brew
-# FIXME: check for pyenv dir before appending path
-#export PATH="$HOME/.pyenv/bin:$PATH"
-#if [ "`which pyenv`" != '' ]; then
+# # pyenv setup
+# # pyenv is installed via brew
+# if [ "`which pyenv`" != '' ]; then
 #  eval "$(pyenv init -)"
-#fi
+# fi
 
 
 # bash completion setup (homebrew)
@@ -274,15 +272,15 @@ if [ -f ${brew_prefix}/etc/bash_completion ]; then
 	source ${brew_prefix}/etc/bash_completion
 fi
 
-# bash completion setup (macports)
-if [ -f /opt/local/etc/bash_completion ]; then
-	source /opt/local/etc/bash_completion
-fi
+# # bash completion setup (macports)
+# if [ -f /opt/local/etc/bash_completion ]; then
+# 	source /opt/local/etc/bash_completion
+# fi
 
-# enable grunt autocomplete
-if [ "`which grunt`" != '' ]; then
-  eval "$(grunt --completion=bash)"
-fi
+# # enable grunt autocomplete
+# if [ "`which grunt`" != '' ]; then
+#   eval "$(grunt --completion=bash)"
+# fi
 
 # enable npm autocomplete
 if [ "$(command -v npm)" != '' ]; then
