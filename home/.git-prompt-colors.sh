@@ -29,14 +29,16 @@ override_git_prompt_colors() {
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
 
   # add vagrant status if we're in a vagrant dir
-  local vagrant_status_cmd="$(vagrant_local_status)"
-  local vagrant_status=""
-  if [ "${vagrant_status}" != "" ]; then
-    vagrant_status="${White}[${Cyan}${vagrant_status_cmd}${White}]${ResetColor}"
-  fi
+#  local vagrant_status_cmd="$(vagrant_local_status)"
+#  local vagrant_status=""
+#  if [ "${vagrant_status}" != "" ]; then
+#    vagrant_status="${White}[${Cyan}${vagrant_status_cmd}${White}]${ResetColor}"
+#  fi
 
-  GIT_PROMPT_END_USER="${vagrant_status}\n_LAST_COMMAND_INDICATOR_${ResetColor}$ "
-  GIT_PROMPT_END_ROOT="${vagrant_status}\n_LAST_COMMAND_INDICATOR_${ResetColor}# "
+  #GIT_PROMPT_END_USER="${vagrant_status}\n_LAST_COMMAND_INDICATOR_${ResetColor}$ "
+  GIT_PROMPT_END_USER="_LAST_COMMAND_INDICATOR_${ResetColor}$ "
+  #GIT_PROMPT_END_ROOT="${vagrant_status}\n_LAST_COMMAND_INDICATOR_${ResetColor}# "
+  GIT_PROMPT_END_ROOT="_LAST_COMMAND_INDICATOR_${ResetColor}# "
 }
 
 reload_git_prompt_colors "Custom"
