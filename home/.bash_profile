@@ -221,6 +221,10 @@ alias gsba='git submodule foreach git branch -a'
 alias gssl='git submodule foreach git stash list'
 alias gsst='git submodule foreach "git status || :"'
 
+# alias colordiff to diff; colordiff is installed via brew
+if [ "$(command -v colordiff)" != '' ]; then
+  alias diff='colordiff'
+fi
 
 # # keep track of installed macports packages
 # if [ "`which ports`" != '' ]; then
