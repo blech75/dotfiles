@@ -149,7 +149,7 @@ export PATH=$home_path:$local_path:$PATH
 #export PKG_CONFIG_PATH=/sw/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig
 #export DYLD_LIBRARY_PATH=/opt/local/lib:/opt/local/var/macports/software/ImageMagick/6.3.1-4_0+darwin_8/opt/local/lib/:$DYLD_LIBRARY_PATH
 #export DYLD_LIBRARY_PATH=/opt/instantclient_10_2:$DYLD_LIBRARY_PATH
-export PERL5LIB=$PERL5LIB:/Users/justin/.pm
+export PERL5LIB="${PERL5LIB}:/${HOME}/.pm"
 #export PYTHONPATH='/Library/Frameworks/Python.framework/Versions/2.4/lib/python2.4/site-packages'
 #export PYTHONPATH=/usr/local/lib/python2.6/site-packages/:/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.6/site-packages/
 #export PATH='/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}'
@@ -252,7 +252,7 @@ if [ "$(command -v rbenv)" != '' ]; then
   eval "$(rbenv init -)"
 fi
 
-export NODE_BUILD_DEFINITIONS="/usr/local/opt/node-build-update-defs/share/node-build"
+export NODE_BUILD_DEFINITIONS="${brew_prefix}/opt/node-build-update-defs/share/node-build"
 
 # nodenv setup
 # nodenv is installed via brew
@@ -323,15 +323,16 @@ fi
 
 # add go packages to path
 # FIXME: check for go dir before appending path
-export GOPATH="~/.go"
+export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 
 # add cabal packages (haskell) to path
 # FIXME: check for cabal dir before appending path
 export PATH="${HOME}/.cabal/bin:${PATH}"
 
-export PATH="/usr/local/opt/ipython@5/bin:$PATH"
+export PATH="${brew_prefix}/opt/ipython@5/bin:$PATH"
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
+source "${google_cloud_sdk}/google-cloud-sdk/path.bash.inc"
+source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
