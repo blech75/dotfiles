@@ -332,6 +332,7 @@ export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 # FIXME: check for cabal dir before appending path
 export PATH="${HOME}/.cabal/bin:${PATH}"
 
+# ipython is installed via brew
 export PATH="${brew_prefix}/opt/ipython@5/bin:$PATH"
 
 google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
