@@ -339,3 +339,4 @@ google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
 source "${google_cloud_sdk}/google-cloud-sdk/path.bash.inc"
 source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
+export LESSOPEN="|${brew_prefix}/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
