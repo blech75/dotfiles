@@ -1,9 +1,13 @@
+# shellcheck shell=bash
+
 # https://github.com/andsens/homeshick/wiki/Installation
 # TODO: add check to see if local has changes; report them; nag to commit
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+#
+# shellcheck disable=SC1090
+source "${HOME}/.homesick/repos/homeshick/homeshick.sh"
 
 # grab homebrew prefix if it's installed
-if [ "`which brew`" != '' ]; then
+if [ "$(command -v brew)" != '' ]; then
   brew_prefix="$(brew --prefix)"
 else
   brew_prefix=""
@@ -24,27 +28,29 @@ function vagrant_local_status() {
   # against vagrant-global-status.
   if [ $# -lt 1 ]; then
     # resolve symlinks of current dir
-    TARGET_PATH="`pwd -P`"
+    TARGET_PATH="$(pwd -P)"
 
   # check to see if the passed dir exists
   elif [[ $# -eq 1 && -d $1 ]]; then
     # resolve symlinks of passed dir
-    TARGET_PATH="$( cd $1 ; pwd -P )"
+    TARGET_PATH="$( cd "$1" && pwd -P )"
   else
     return 1
   fi
 
   # return immediately if we can't find the tool in $PATH
-  if [ "`which $VGS`" = "" ]; then
+  if [ "$(command -v $VGS)" = "" ]; then
     return 1
   fi
 
   # capture output of vagrant-global-status. we'll need to process it a few
   # more times later.
-  local VAGRANT_STATUS="`$VGS`"
+  local VAGRANT_STATUS
+  VAGRANT_STATUS="$($VGS)"
 
   # extract dir paths (5th col)
-  local ALL_VM_PATHS=$(echo "$VAGRANT_STATUS" | awk '{ print $5 }')
+  local ALL_VM_PATHS
+  ALL_VM_PATHS=$(echo "$VAGRANT_STATUS" | awk '{ print $5 }')
 
   # holds the path to the VM (a parent of TARGET_PATH)
   local MATCHED_VM_PATH=""
@@ -67,22 +73,26 @@ function vagrant_local_status() {
   fi
 
   # holds entire status line(s). we'll process it later
-  local MATCHED_VM=$(echo "$VAGRANT_STATUS" | grep $MATCHED_VM_PATH)
+  local MATCHED_VM
+  MATCHED_VM=$(echo "$VAGRANT_STATUS" | grep "$MATCHED_VM_PATH")
 
   # count the number of VMs we've matched, stripping out leading spaces from
   # wc output
-  local NUM_VMS=$(echo $MATCHED_VM | wc -l | sed -e 's/ //g')
+  local NUM_VMS
+  NUM_VMS=$(echo "$MATCHED_VM" | wc -l | sed -e 's/ //g')
 
   # FIXME: no multi-machine vagrant right now.
   # https://docs.vagrantup.com/v2/multi-machine/
   if [ "${NUM_VMS}" = "1" ]; then
     # for the line that matches, get extract the desired status info
-    local VM_NAME="$(echo $MATCHED_VM | awk '{ print $2}')"
-    local VM_STATUS="$(echo $MATCHED_VM | awk '{ print $4}')"
+    local VM_NAME
+    VM_NAME="$(echo "$MATCHED_VM" | awk '{ print $2}')"
+    local VM_STATUS
+    VM_STATUS="$(echo "$MATCHED_VM" | awk '{ print $4}')"
 
     # FIXME: make output more succinct. need to account for all status values
     # (poweroff|running|saved|...)
-    echo ${VM_NAME}:${VM_STATUS}
+    echo "${VM_NAME}:${VM_STATUS}"
   fi
 
   return 0;
@@ -91,8 +101,8 @@ function vagrant_local_status() {
 
 # enable custom git prompt
 if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Custom
-  __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
+  export GIT_PROMPT_THEME=Custom
+  export __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
   source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
@@ -107,7 +117,7 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 shopt -s histappend
 
 function hgrep() {
-  history | grep $1
+  history | grep "$1"
 }
 
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
@@ -156,7 +166,8 @@ export LANG='en_US.UTF-8'
 
 # platform targets (forget why i needed this)
 # export RC_ARCHS='i386'
-export RC_ARCHS=`uname -m`
+RC_ARCHS=$(uname -m)
+export RC_ARCHS
 
 # ignore mac os resource forks in zip files
 # FIXME: is this necessary/supported anymore? check current behavior
@@ -171,7 +182,8 @@ alias ls='ls -G'
 
 # helper to grep current dir for string
 function lsg {
-    ls -la | grep $1
+    # shellcheck disable=SC2010
+    ls -la | grep "$1"
 }
 
 # create instant/temp local http server
@@ -184,7 +196,7 @@ function localhost {
   # counter-intuitive that we want to open the browser before we know the
   # server is successfully launched, but we need to monitor and kill the server
   # when we're done.
-  open "http://localhost:${PORT}" && /usr/bin/python -m SimpleHTTPServer $PORT
+  open "http://localhost:${PORT}" && /usr/bin/python -m SimpleHTTPServer "${PORT}"
 }
 
 
@@ -220,7 +232,7 @@ fi
 
 
 # keep track of installed homebrew formulae
-if [ "`which brew`" != '' ]; then
+if [ "$(command -v brew)" != '' ]; then
   function installed-brews() {
     brew list --versions --full-name > ~/.homebrew-installed
   }
@@ -234,10 +246,8 @@ fi
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
 
 # rbenv setup
-# rbenv is installed via source checkout in ~/.rbenv
-# FIXME: check for rbenv dir before appending path
-export PATH="$HOME/.rbenv/bin:$PATH"
-if [ "`which rbenv`" != '' ]; then
+# rbenv is installed via brew
+if [ "$(command -v rbenv)" != '' ]; then
   eval "$(rbenv init -)"
 fi
 
@@ -245,9 +255,7 @@ export NODE_BUILD_DEFINITIONS="/usr/local/opt/node-build-update-defs/share/node-
 
 # nodenv setup
 # nodenv is installed via brew
-# FIXME: check for nodenv dir before appending path
-export PATH="$HOME/.nodenv/bin:$PATH"
-if [ "`which nodenv`" != '' ]; then
+if [ "$(command -v nodenv)" != '' ]; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
@@ -276,7 +284,7 @@ if [ "`which grunt`" != '' ]; then
 fi
 
 # enable npm autocomplete
-if [ "`which npm`" != '' ]; then
+if [ "$(command -v npm)" != '' ]; then
   # https://docs.npmjs.com/cli/completion
   source <(npm completion)
 fi
@@ -302,12 +310,13 @@ fi
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
-if [ "`which overcommit`" != '' ]; then
-  export GIT_TEMPLATE_DIR=`overcommit --template-dir`
+if [ "$(command -v overcommit)" != '' ]; then
+  GIT_TEMPLATE_DIR=$(overcommit --template-dir)
+  export GIT_TEMPLATE_DIR
 fi
 
 # https://github.com/github/hub#aliasing
-if [ "`which hub`" != '' ]; then
+if [ "$(command -v hub)" != '' ]; then
   eval "$(hub alias -s)"
 fi
 
