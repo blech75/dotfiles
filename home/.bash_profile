@@ -32,7 +32,7 @@ function vagrant_local_status() {
   # check to see if the passed dir exists
   elif [[ $# -eq 1 && -d $1 ]]; then
     # resolve symlinks of passed dir
-    TARGET_PATH="$( cd "$1" && pwd -P )"
+    TARGET_PATH="$(cd "$1" && pwd -P)"
   else
     return 1
   fi
@@ -184,8 +184,8 @@ alias ls='ls -G'
 
 # helper to grep current dir for string
 function lsg() {
-    # shellcheck disable=SC2010
-    ls -la | grep "$1"
+  # shellcheck disable=SC2010
+  ls -la | grep "$1"
 }
 
 # create instant/temp local http server
@@ -272,7 +272,7 @@ fi
 
 # bash completion setup (homebrew)
 if [ -f ${brew_prefix}/etc/bash_completion ]; then
-	source ${brew_prefix}/etc/bash_completion
+  source ${brew_prefix}/etc/bash_completion
 fi
 
 # enable npm autocomplete
@@ -331,3 +331,59 @@ google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
 source "${google_cloud_sdk}/google-cloud-sdk/path.bash.inc"
 source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
+# https://cloud.google.com/appengine/docs/standard/python/tools/remoteapi#using_the_remote_api_in_a_local_client
+export GAE_SDK_ROOT="${google_cloud_sdk}/google-cloud-sdk/platform/google_appengine"
+export PYTHONPATH=${GAE_SDK_ROOT}:${PYTHONPATH}
+
+# alias gae-dev="dev_appserver.py . --enable_console --log_level=debug --storage_path=dev_appserver --watcher_ignore_re='.*/dev_appserver/.*'"``
+
+function gaedev() {
+  env_vars_args=""
+
+  if [ -f '.env' ]; then
+    echo "> Using .env file:"
+    # print the .env file for debugging purposes, prepending spaces via perl.
+    perl -pe's/^/  /' <.env
+    echo
+
+    # create --env_var args based on .env file, supporting 'export' prefix
+    # CLEANUP: filter out comments
+    env_vars_args=$(grep -vE '^#' .env | perl -pe's/^(export )?/--env_var /' | perl -pe's/\n/ /')
+
+  else
+    echo "> No .env file found."
+    echo
+  fi
+
+  # ensure that all logging is output
+  log_level="--log_level=debug"
+
+  # allow for arbitrary scripts to be run in http://localhost:8000/console
+  enable_console="--enable_console"
+
+  # allow for semi-persistent storage. use /tmp instead of a subdir because
+  # dev_appserver has a bug pasing regexps for exclude paths.
+  # see https://stackoverflow.com/q/50721890/2284440
+  #
+  # using a subdir without watcher_ignore_re set causes unnecessary app restarts
+  # due to --automatic_restart, which defaults to true. note that /tmp is
+  # cleared on system restart.
+  #
+  # watcher_ignore_re="--watcher_ignore_re='.*/dev_appserver/.*'"
+  # storage_path="--storage_path=dev_appserver"
+  #
+  storage_path="--storage_path=/tmp/dev_appserver.$(basename $(pwd))"
+
+  cmd="dev_appserver.py . ${enable_console}  ${log_level} ${storage_path} ${env_vars_args} $*"
+  echo "${cmd}"
+  echo
+
+  $cmd
+}
+export -f gaedev
+
+alias autotest="until ag -l --python --ignore-dir lib --ignore-dir lib.dev --ignore-dir test/lib | entr -d green -l -vv test; do sleep 1; done"
+
+which green >&/dev/null && source "$(green --completion-file)"
+
+export PYTHONDONTWRITEBYTECODE=1
