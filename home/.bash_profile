@@ -315,6 +315,9 @@ fi
 export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 
+# for lesspipe
+export LESSOPEN="|${brew_prefix}/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=2
+
 # add cabal packages (haskell) to path
 # FIXME: check for cabal dir before appending path
 export PATH="${HOME}/.cabal/bin:${PATH}"
@@ -326,4 +329,3 @@ google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
 source "${google_cloud_sdk}/google-cloud-sdk/path.bash.inc"
 source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
-export LESSOPEN="|${brew_prefix}/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
