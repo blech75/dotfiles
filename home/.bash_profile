@@ -277,17 +277,16 @@ if [ -f ${brew_prefix}/etc/bash_completion ]; then
 fi
 
 # enable npm autocomplete
-if [ "$(command -v npm)" != '' ]; then
-  # https://docs.npmjs.com/cli/completion
-  source <(npm completion)
-fi
+# if [ "$(command -v npm)" != '' ]; then
+#   # https://docs.npmjs.com/cli/completion
+#   source <(npm completion)
+# fi
 
 # helper function to run node cli executable in context of the package
 # http://stackoverflow.com/a/32059751/2284440
-function npm-exec {
-  $(npm bin)/$*
-}
-
+# function npm-exec() {
+#   $(npm bin)/$*
+# }
 
 # enable homeshick autocompletion
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
