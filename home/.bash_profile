@@ -130,13 +130,19 @@ home_path=$HOME/bin
 # apache_path=/opt/local/apache2/bin
 # mysql_path=/opt/local/lib/mysql5/bin
 # pgsql_path=/opt/local/lib/postgresql95/bin
+
+# NOTE: these paths are version-dependent
+mysql_path="/usr/local/opt/mysql@5.7/bin"
+postgres_path="/usr/local/opt/postgresql@9.6/bin"
+
 #oracle_path=/opt/instantclient_10_2
 # vmware_path=/Library/Application\ Support/VMware\ Fusion
 # macports_path=/opt/local/bin:/opt/local/sbin
 local_path=/usr/local/bin:/usr/local/sbin
 # heroku_path=/usr/local/heroku/bin
+composer_path=$HOME/.composer/vendor/bin
 # export PATH=$home_path:$heroku_path:$vmware_path:$apache_path:$mysql_path:$pgsql_path:$macports_path:$local_path:$PATH
-export PATH=$home_path:$local_path:$PATH
+export PATH=$home_path:$local_path:$postgres_path:$mysql_path:$composer_path:$PATH
 
 # other path setup stuff
 # export MANPATH=/opt/local/man:$MANPATH
