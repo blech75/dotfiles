@@ -241,6 +241,9 @@ fi
 # http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
 
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded)
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 # rbenv setup
 # rbenv is installed via brew
 if [ "$(command -v rbenv)" != '' ]; then
