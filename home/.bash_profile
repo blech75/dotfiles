@@ -301,15 +301,15 @@ fi
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
-if [ "$(command -v overcommit)" != '' ]; then
-  GIT_TEMPLATE_DIR=$(overcommit --template-dir)
-  export GIT_TEMPLATE_DIR
-fi
+#if [ "$(command -v overcommit)" != '' ]; then
+#  GIT_TEMPLATE_DIR=$(overcommit --template-dir)
+#  export GIT_TEMPLATE_DIR
+#fi
 
 # https://github.com/github/hub#aliasing
-if [ "$(command -v hub)" != '' ]; then
-  eval "$(hub alias -s)"
-fi
+# if [ "$(command -v hub)" != '' ]; then
+#   eval "$(hub alias -s)"
+# fi
 
 # add go packages to path
 # FIXME: check for go dir before appending path
