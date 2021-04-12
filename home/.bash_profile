@@ -310,6 +310,8 @@ fi
 #   eval "$(hub alias -s)"
 # fi
 
+# . $(brew --prefix asdf)/asdf.sh
+
 # add go packages to path
 # FIXME: check for go dir before appending path
 export GOPATH="${HOME}/.go"
