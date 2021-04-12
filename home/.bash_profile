@@ -13,7 +13,6 @@ else
   brew_prefix=""
 fi
 
-
 # outputs name and status of vagrant machine if passed path is child of a
 # vagrant project
 function vagrant_local_status() {
@@ -95,9 +94,8 @@ function vagrant_local_status() {
     echo "${VM_NAME}:${VM_STATUS}"
   fi
 
-  return 0;
+  return 0
 }
-
 
 # enable custom git prompt
 if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
@@ -105,7 +103,6 @@ if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   export __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
   source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
 fi
-
 
 ### set some shell options
 # http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
@@ -126,7 +123,6 @@ shopt -s checkwinsize
 # allow for globbing
 # requires bash 4.x
 shopt -s globstar
-
 
 # path setup
 # FIXME: refactor this to something better
@@ -178,18 +174,17 @@ export RC_ARCHS
 alias ls='ls -G'
 #export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.flac=01;35:*.mp3=01;35:*.mpc=01;35:*.ogg=01;35:*.wav=01;35:'
 
-
 #man() { man -t "$@" | open -f -a Preview; }
 
 # helper to grep current dir for string
-function lsg {
+function lsg() {
     # shellcheck disable=SC2010
     ls -la | grep "$1"
 }
 
 # create instant/temp local http server
 # from https://gist.github.com/1525217 with a few tweaks by me
-function localhost {
+function localhost() {
   local PORT=8000
   if [ "$1" != "" ]; then
     PORT=$1
@@ -199,8 +194,6 @@ function localhost {
   # when we're done.
   open "http://localhost:${PORT}" && /usr/bin/python -m SimpleHTTPServer "${PORT}"
 }
-
-
 
 # javascript consoles
 alias js="java org.mozilla.javascript.tools.shell.Main"
@@ -235,7 +228,6 @@ fi
 #   requested-ports
 # fi
 
-
 # keep track of installed homebrew formulae
 if [ "$(command -v brew)" != '' ]; then
   function installed-brews() {
@@ -244,7 +236,6 @@ if [ "$(command -v brew)" != '' ]; then
 
   installed-brews
 fi
-
 
 # fixes the weird require issue with veewee/vagrant
 # http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
@@ -309,7 +300,6 @@ if [[ $? -eq 88 ]]; then
   echo "Rememeber to commit your dotfiles!"
   (homeshick cd dotfiles && git status --short)
 fi
-
 
 # overcommit setup
 # https://github.com/brigade/overcommit/
