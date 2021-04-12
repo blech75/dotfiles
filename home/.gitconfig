@@ -94,6 +94,8 @@
     # merge-base master
     mbm = !bash -c 'git lg -1 $(git merge-base -a master $0)'
 
+    mb = !bash -c 'git lg -1 $(git merge-base --fork-point $0)'
+
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
 
