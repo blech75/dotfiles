@@ -231,7 +231,7 @@ fi
 # keep track of installed homebrew formulae
 if [ "$(command -v brew)" != '' ]; then
   function installed-brews() {
-    brew list --versions --full-name > ~/.homebrew-installed
+    brew list --versions >~/.homebrew-installed
   }
 
   installed-brews
