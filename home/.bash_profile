@@ -264,12 +264,11 @@ if [ "$(command -v nodenv)" != '' ]; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-# # pyenv setup
-# # pyenv is installed via brew
-# if [ "`which pyenv`" != '' ]; then
-#  eval "$(pyenv init -)"
-# fi
-
+# pyenv setup
+# pyenv is installed via brew
+if [ "$(which pyenv)" != '' ]; then
+  eval "$(pyenv init -)"
+fi
 
 # bash completion setup (homebrew)
 if [ -f ${brew_prefix}/etc/bash_completion ]; then
