@@ -267,16 +267,6 @@ if [ -f ${brew_prefix}/etc/bash_completion ]; then
 	source ${brew_prefix}/etc/bash_completion
 fi
 
-# # bash completion setup (macports)
-# if [ -f /opt/local/etc/bash_completion ]; then
-# 	source /opt/local/etc/bash_completion
-# fi
-
-# # enable grunt autocomplete
-# if [ "`which grunt`" != '' ]; then
-#   eval "$(grunt --completion=bash)"
-# fi
-
 # enable npm autocomplete
 if [ "$(command -v npm)" != '' ]; then
   # https://docs.npmjs.com/cli/completion
