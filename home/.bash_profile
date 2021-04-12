@@ -151,7 +151,7 @@ export PERL5LIB="${PERL5LIB}:/${HOME}/.pm"
 #export PATH='/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}'
 #export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 #export JAVA_HTML='/Library/Java/Home'
-export PYTHONSTARTUP=~/.pythonstartup
+#export PYTHONSTARTUP=~/.pythonstartup
 
 # http://stackoverflow.com/a/6588410/2284440
 # export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
