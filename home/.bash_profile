@@ -348,8 +348,6 @@ export GAE_SDK_ROOT="${google_cloud_sdk}/google-cloud-sdk/platform/google_appeng
 export PYTHONPATH=${GAE_SDK_ROOT}:${PYTHONPATH}
 
 
-alias autotest="until ag -l --python --ignore-dir lib --ignore-dir lib.dev --ignore-dir test/lib | entr -d green -l -vv test; do sleep 1; done"
-
 # configure completion for green (python test runner)
 # shellcheck disable=SC1090
 which green >&/dev/null && source "$(green --completion-file)"
