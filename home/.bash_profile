@@ -245,15 +245,6 @@ if [ "$(command -v colordiff)" != '' ]; then
   alias diff='colordiff'
 fi
 
-# # keep track of installed macports packages
-# if [ "`which ports`" != '' ]; then
-#   function requested-ports() {
-#     port list requested 2> /dev/null | uniq > ~/.macports/requested
-#   }
-
-#   requested-ports
-# fi
-
 # fixes the weird require issue with veewee/vagrant
 # http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
