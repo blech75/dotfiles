@@ -345,7 +345,7 @@ source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
 # https://cloud.google.com/appengine/docs/standard/python/tools/remoteapi#using_the_remote_api_in_a_local_client
 export GAE_SDK_ROOT="${google_cloud_sdk}/google-cloud-sdk/platform/google_appengine"
-export PYTHONPATH=${GAE_SDK_ROOT}:${PYTHONPATH}
+export PYTHONPATH="${GAE_SDK_ROOT}${PYTHONPATH:+":$PYTHONPATH"}"
 
 # export PYTHONDONTWRITEBYTECODE=0
 
