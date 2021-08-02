@@ -424,7 +424,12 @@
     "type": "none"
   },
   "todo-tree.expanded": true,
-  "todo-tree.general.tags": ["TODO", "FIXME", "CLEANUP", "CLEANUP_SOON"],
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "CLEANUP",
+    "CLEANUP_SOON"
+  ],
   "todo-tree.highlights.customHighlight": {
     "CLEANUP": {},
     "CLEANUP_SOON": {},
