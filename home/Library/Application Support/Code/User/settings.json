@@ -1,0 +1,463 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrapColumn": 80
+  },
+  "[python]": {
+    "editor.wordBasedSuggestions": false,
+    "gitlens.codeLens.symbolScopes": ["!Module"]
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "bracket-pair-colorizer-2.showBracketsInGutter": true,
+  "bracket-pair-colorizer-2.showBracketsInRuler": true,
+  "breadcrumbs.enabled": true,
+  "cSpell.enableFiletypes": ["ignore"],
+  "cSpell.userWords": [
+    "ATTRIBYTE",
+    "Alexa",
+    "Blecher",
+    "Comscore",
+    "Curalate",
+    "DATALAYER",
+    "Decluttering",
+    "Expando",
+    "FBIA",
+    "Facbeook",
+    "Fastly",
+    "Fastly's",
+    "Fexy",
+    "IIFE",
+    "Iframes",
+    "Imgix",
+    "Jwplayer",
+    "Kitchn's",
+    "Lifecycle",
+    "Liftigniter",
+    "Narrativ",
+    "Outbrain",
+    "POSTUP",
+    "PREVIEWABLE",
+    "Pageview",
+    "Parsely",
+    "Pinboard",
+    "Pinterest",
+    "Porkchop",
+    "Preload",
+    "Quantcast",
+    "Reddit",
+    "Signup",
+    "Uncategorized",
+    "Uploader",
+    "Vimeo",
+    "Wirewax",
+    "Youtube",
+    "adblock",
+    "algolia",
+    "algoliasearch",
+    "allowfullscreen",
+    "amphtml",
+    "apartmenttherapy",
+    "apartmenttherapymedia",
+    "apos",
+    "appengine",
+    "applenews",
+    "appserver",
+    "appstats",
+    "apttherapy",
+    "archiver",
+    "astimezone",
+    "atcms",
+    "atid",
+    "atmedia",
+    "authed",
+    "automagically",
+    "autotrack",
+    "buildkite",
+    "builtins",
+    "cacheable",
+    "cachebuster",
+    "camelcase",
+    "canoicalize",
+    "caskroom",
+    "centercrop",
+    "ceros",
+    "clearfix",
+    "cloudfront",
+    "cloudinary",
+    "cmds",
+    "codecov",
+    "coredump",
+    "correlator",
+    "creds",
+    "cubbyathome",
+    "datadog",
+    "dataloader",
+    "datastore",
+    "datastoreio",
+    "datetime",
+    "debounced",
+    "dedupe",
+    "deduped",
+    "delegator",
+    "delegators",
+    "deps",
+    "devtools",
+    "discontiguous",
+    "dotenv",
+    "droppable",
+    "ents",
+    "executables",
+    "favicon",
+    "favicons",
+    "flipboard",
+    "gcloud",
+    "getenv",
+    "gitignore",
+    "graphene",
+    "graphiql",
+    "graphql",
+    "grayscale",
+    "gserviceaccount",
+    "guid",
+    "hardcode",
+    "hardcoded",
+    "hardcoding",
+    "headshot",
+    "hier",
+    "horiz",
+    "hostnames",
+    "iframe",
+    "instantsearch",
+    "instgrm",
+    "iphone",
+    "isort",
+    "itertools",
+    "jalepe",
+    "jalepeños",
+    "jwks",
+    "kitchn",
+    "lazyload",
+    "leaderboard",
+    "listicle",
+    "listicles",
+    "longtail",
+    "megadraft",
+    "memoization",
+    "memoized",
+    "microservices",
+    "minidisc",
+    "monorepo",
+    "multisite",
+    "mutex",
+    "nodenv",
+    "noindex",
+    "noopener",
+    "noqa",
+    "noreferrer",
+    "numpy",
+    "nvmrc",
+    "opengraph",
+    "optin",
+    "optout",
+    "os",
+    "pagebundler",
+    "pformat",
+    "phyllotaxis",
+    "pinit",
+    "pinnable",
+    "pixelate",
+    "pixelated",
+    "precache",
+    "preconnect",
+    "prefetch",
+    "preroll",
+    "proto",
+    "pybool",
+    "pylint",
+    "pytz",
+    "quux",
+    "realtime",
+    "recipebox",
+    "recirc",
+    "refetch",
+    "refetching",
+    "reindex",
+    "repo",
+    "repos",
+    "repromoted",
+    "sailthru",
+    "scrollable",
+    "serializers",
+    "shortcode",
+    "skimlinks",
+    "slugified",
+    "spotim",
+    "strftime",
+    "subdir",
+    "subdirs",
+    "symlink",
+    "symlinked",
+    "thekitchn",
+    "threadsafe",
+    "timegm",
+    "titleize",
+    "transpiled",
+    "transpiles",
+    "typedefs",
+    "unfetch",
+    "unittest",
+    "unminimize",
+    "unmount",
+    "unpaused",
+    "unsets",
+    "upscaled",
+    "upsert",
+    "viewports",
+    "virtualenv",
+    "webfont",
+    "woocommerce",
+    "woot",
+    "wordpress",
+    "wpackagist",
+    "xlarge",
+    "xmlns",
+    "xsmall",
+    "zeit"
+  ],
+  "dashboard.projectData": null,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": null,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.matchBrackets": false,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "alt",
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "mixed",
+  "files.associations": {
+    "*.js": "javascript"
+  },
+  "files.defaultLanguage": "javascript",
+  "files.exclude": {
+    "**/*.pyc": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "gitlens.advanced.similarityThreshold": 90,
+  "gitlens.heatmap.toggleMode": "window",
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "openInGitHub.defaultRemote": "github",
+  "peacock.affectActivityBar": true,
+  "peacock.affectTitleBar": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "problems.showCurrentInStatus": true,
+  "python.formatting.blackPath": "/usr/local/bin/black",
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.languageServer": "Pylance",
+  "python.linting.ignorePatterns": [
+    ".vscode/*.py",
+    "**/site-packages/**/*.py",
+    "**/lib/**/*.py"
+  ],
+  "python.linting.pylintPath": "/usr/local/bin/pylint",
+  "python.linting.pylintUseMinimalCheckers": false,
+  "python.showStartPage": false,
+  "python.sortImports.path": "/usr/local/bin/isort",
+  "pythonTestExplorer.testFramework": "unittest",
+  "search.exclude": {
+    "**/static": true
+  },
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "dockerfile",
+    "dotenv",
+    "hosts",
+    "jvmoptions",
+    "ignore",
+    "properties",
+    "spring-boot-properties",
+    "azcli"
+  ],
+  "sourcery.token": "user_oDNvp6muSaTI9zS_4xhq0vvc83Mo4g8tEsNWBFWzZchQnx27XN1KDsLHQ8U",
+  "terminal.integrated.confirmOnExit": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+  "terminal.integrated.showExitAlert": false,
+  "test-switcher.rules": [
+    {
+      "pattern": "(.*)\\.js",
+      "replacement": "$1.spec.js"
+    },
+    {
+      "pattern": "(.*)\\.spec\\.js",
+      "replacement": "$1.js"
+    },
+    {
+      "pattern": "(.*)\\.py",
+      "replacement": "test/test_$1.py"
+    },
+    {
+      "pattern": "test/test_(.*)\\.py",
+      "replacement": "$1.py"
+    },
+    {
+      "pattern": "models/(.*)\\.py",
+      "replacement": "test/test_models_$1.py"
+    },
+    {
+      "pattern": "test/test_models_(.*)\\.py",
+      "replacement": "models/$1.py"
+    },
+    {
+      "pattern": "helpers/(.*)\\.py",
+      "replacement": "test/test_helpers_$1.py"
+    },
+    {
+      "pattern": "test/test_helpers_(.*)\\.py",
+      "replacement": "helpers/$1.py"
+    },
+    {
+      "pattern": "utils/(.*)\\.py",
+      "replacement": "test/test_utils_$1.py"
+    },
+    {
+      "pattern": "test/test_utils_(.*)\\.py",
+      "replacement": "utils/$1.py"
+    }
+  ],
+  "tidyHtml.formatOnSave": false,
+  "todo-tree.customHighlight": {
+    "CLEANUP": {},
+    "CLEANUP_SOON": {},
+    "FIXME": {},
+    "TODO": {}
+  },
+  "todo-tree.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.expanded": true,
+  "todo-tree.general.tags": ["TODO", "FIXME", "CLEANUP", "CLEANUP_SOON"],
+  "todo-tree.highlights.customHighlight": {
+    "CLEANUP": {},
+    "CLEANUP_SOON": {},
+    "FIXME": {},
+    "TODO": {}
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.tags": ["TODO", "FIXME", "CLEANUP", "CLEANUP_SOON"],
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.showScanModeButton": false,
+  "typescript.autoImportSuggestions.enabled": false,
+  "typescript.check.npmIsInstalled": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.newWindowDimensions": "inherit",
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    // "editorIndentGuide.activeBackground": "#13d0ff",
+    // "editor.selectionHighlightBackground": "#ffffff10",
+    // "editor.selectionHighlightBorder": "#444",
+  },
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.editor.showTabs": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.sash.hoverDelay": 50,
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "wrapSelection.patterns": {}
+}

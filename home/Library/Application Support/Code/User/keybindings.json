@@ -1,0 +1,95 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "alt+down",
+    "command": "-editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+up",
+    "command": "-editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  { "key": "cmd+numpad_add", "command": "editor.action.fontZoomIn" },
+  { "key": "shift+cmd+=", "command": "editor.action.fontZoomIn" },
+  { "key": "cmd+=", "command": "editor.action.fontZoomIn" },
+  { "key": "cmd+numpad_subtract", "command": "editor.action.fontZoomOut" },
+  { "key": "shift+cmd+-", "command": "editor.action.fontZoomOut" },
+  { "key": "cmd+-", "command": "editor.action.fontZoomOut" },
+  { "key": "cmd+numpad0", "command": "editor.action.fontZoomReset" },
+  {
+    "key": "cmd+0",
+    "command": "editor.action.fontZoomReset"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "cmd+e cmd+e",
+    "command": "-extension.base64Encode",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+e cmd+d",
+    "command": "-extension.base64Decode",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "test-switcher.switch",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+y",
+    "command": "-test-switcher.switch",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+k n",
+    "command": "merge-conflict.next"
+  },
+  {
+    "key": "cmd+k p",
+    "command": "merge-conflict.previous"
+  }
+]
