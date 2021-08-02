@@ -149,9 +149,6 @@ shopt -s globstar
 # path setup
 # FIXME: refactor this to something better
 home_path=$HOME/bin
-# apache_path=/opt/local/apache2/bin
-# mysql_path=/opt/local/lib/mysql5/bin
-# pgsql_path=/opt/local/lib/postgresql95/bin
 
 # NOTE: these paths are version-dependent
 mysql_path="/usr/local/opt/mysql@5.7/bin"
@@ -169,11 +166,7 @@ export PATH=$home_path:$local_path:$postgres_path:$mysql_path:$composer_path:$PA
 #export VIMRUNTIME=/Users/justin/.vim
 #export PKG_CONFIG_PATH=/sw/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig
 #export DYLD_LIBRARY_PATH=/opt/local/lib:/opt/local/var/macports/software/ImageMagick/6.3.1-4_0+darwin_8/opt/local/lib/:$DYLD_LIBRARY_PATH
-#export DYLD_LIBRARY_PATH=/opt/instantclient_10_2:$DYLD_LIBRARY_PATH
 export PERL5LIB="${PERL5LIB}:/${HOME}/.pm"
-#export PYTHONPATH='/Library/Frameworks/Python.framework/Versions/2.4/lib/python2.4/site-packages'
-#export PYTHONPATH=/usr/local/lib/python2.6/site-packages/:/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.6/site-packages/
-#export PATH='/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}'
 #export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 #export JAVA_HTML='/Library/Java/Home'
 #export PYTHONSTARTUP=~/.pythonstartup
