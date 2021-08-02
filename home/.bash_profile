@@ -353,3 +353,12 @@ export PYTHONPATH="${GAE_SDK_ROOT}${PYTHONPATH:+":$PYTHONPATH"}"
 # shellcheck disable=SC1090
 which green >&/dev/null && source "$(green --completion-file)"
 
+# use green completion for './scripts/test', too.
+#
+# NOTE: using './scripts/test' as the "completion command name" is a
+# workaround to avoid conflicting with bash's built-in 'test' command. since the
+# usual method running our test script is via './scripts/test', this works
+# "good enough" for now. :-/ (alternatively, make a custom alias for the test
+# runner and assign completions to that.)
+#
+complete -p green >&/dev/null && complete -F _green_completion ./scripts/test
