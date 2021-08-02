@@ -307,8 +307,9 @@ export PATH="${GOPATH}/bin:${PATH}:${brew_prefix}/opt/go/libexec/bin"
 export LESSOPEN="|${brew_prefix}/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=2
 
 # add cabal packages (haskell) to path
-# FIXME: check for cabal dir before appending path
-export PATH="${HOME}/.cabal/bin:${PATH}"
+if [ -d "${HOME}/.cabal/bin" ]; then
+  export PATH="${HOME}/.cabal/bin:${PATH}"
+fi
 
 # ipython is installed via brew
 export PATH="${brew_prefix}/opt/ipython@5/bin:$PATH"
