@@ -148,17 +148,13 @@ shopt -s globstar
 
 # path setup
 # FIXME: refactor this to something better
-home_path=$HOME/bin
-
-# NOTE: these paths are version-dependent
+home_path="$HOME/bin"
+usr_local_path="/usr/local/bin:/usr/local/sbin"
 mysql_path="/usr/local/opt/mysql@5.7/bin"
 postgres_path="/usr/local/opt/postgresql@9.6/bin"
-
-# vmware_path=/Library/Application\ Support/VMware\ Fusion
-local_path=/usr/local/bin:/usr/local/sbin
-composer_path=$HOME/.composer/vendor/bin
-# export PATH=$home_path:$heroku_path:$vmware_path:$apache_path:$mysql_path:$pgsql_path:$macports_path:$local_path:$PATH
-export PATH=$home_path:$local_path:$postgres_path:$mysql_path:$composer_path:$PATH
+composer_path="$HOME/.composer/vendor/bin"
+php_path="/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:"
+export PATH=$home_path:$usr_local_path:$postgres_path:$mysql_path:$php_path:$composer_path:$PATH
 
 # other path setup stuff
 # export MANPATH=/opt/local/man:$MANPATH
