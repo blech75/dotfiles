@@ -4,7 +4,7 @@
 	useconfigonly = true
 
 [core]
-	excludesfile = /Users/justin/.gitignore
+	excludesfile = /Users/justinb/.gitignore_global
 	autocrlf = input
 
 [color]
