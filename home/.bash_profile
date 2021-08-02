@@ -347,9 +347,9 @@ source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 export GAE_SDK_ROOT="${google_cloud_sdk}/google-cloud-sdk/platform/google_appengine"
 export PYTHONPATH=${GAE_SDK_ROOT}:${PYTHONPATH}
 
+# export PYTHONDONTWRITEBYTECODE=0
 
 # configure completion for green (python test runner)
 # shellcheck disable=SC1090
 which green >&/dev/null && source "$(green --completion-file)"
 
-export PYTHONDONTWRITEBYTECODE=1
