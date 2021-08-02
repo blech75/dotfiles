@@ -19,6 +19,21 @@ else
   brew_prefix=""
 fi
 
+# bash completion setup (homebrew)
+if [ -f "${brew_prefix}/etc/bash_completion" ]; then
+  # shellcheck disable=SC1091
+  source "${brew_prefix}/etc/bash_completion"
+fi
+
+# keep track of installed homebrew formulae
+if [ "$(command -v brew)" != '' ]; then
+  function installed-brews() {
+    brew list --versions >~/.homebrew-installed
+  }
+
+  installed-brews
+fi
+
 # outputs name and status of vagrant machine if passed path is child of a
 # vagrant project
 function vagrant_local_status() {
@@ -239,15 +254,6 @@ fi
 #   requested-ports
 # fi
 
-# keep track of installed homebrew formulae
-if [ "$(command -v brew)" != '' ]; then
-  function installed-brews() {
-    brew list --versions >~/.homebrew-installed
-  }
-
-  installed-brews
-fi
-
 # fixes the weird require issue with veewee/vagrant
 # http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
@@ -280,12 +286,6 @@ if [ "$(which pyenv)" != '' ]; then
 
   # Load pyenv into the shell
   eval "$(pyenv init -)"
-fi
-
-# bash completion setup (homebrew)
-if [ -f "${brew_prefix}/etc/bash_completion" ]; then
-  # shellcheck disable=SC1091
-  source "${brew_prefix}/etc/bash_completion"
 fi
 
 # enable npm autocomplete
