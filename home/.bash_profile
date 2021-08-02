@@ -347,52 +347,6 @@ source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 export GAE_SDK_ROOT="${google_cloud_sdk}/google-cloud-sdk/platform/google_appengine"
 export PYTHONPATH=${GAE_SDK_ROOT}:${PYTHONPATH}
 
-# alias gae-dev="dev_appserver.py . --enable_console --log_level=debug --storage_path=dev_appserver --watcher_ignore_re='.*/dev_appserver/.*'"``
-
-function gaedev() {
-  env_vars_args=""
-
-  if [ -f '.env' ]; then
-    echo "> Using .env file:"
-    # print the .env file for debugging purposes, prepending spaces via perl.
-    perl -pe's/^/  /' <.env
-    echo
-
-    # create --env_var args based on .env file, supporting 'export' prefix
-    # CLEANUP: filter out comments
-    env_vars_args=$(grep -vE '^#' .env | perl -pe's/^(export )?/--env_var /' | perl -pe's/\n/ /')
-
-  else
-    echo "> No .env file found."
-    echo
-  fi
-
-  # ensure that all logging is output
-  log_level="--log_level=debug"
-
-  # allow for arbitrary scripts to be run in http://localhost:8000/console
-  enable_console="--enable_console"
-
-  # allow for semi-persistent storage. use /tmp instead of a subdir because
-  # dev_appserver has a bug pasing regexps for exclude paths.
-  # see https://stackoverflow.com/q/50721890/2284440
-  #
-  # using a subdir without watcher_ignore_re set causes unnecessary app restarts
-  # due to --automatic_restart, which defaults to true. note that /tmp is
-  # cleared on system restart.
-  #
-  # watcher_ignore_re="--watcher_ignore_re='.*/dev_appserver/.*'"
-  # storage_path="--storage_path=dev_appserver"
-  #
-  storage_path="--storage_path=/tmp/dev_appserver.$(basename $(pwd))"
-
-  cmd="dev_appserver.py . ${enable_console}  ${log_level} ${storage_path} ${env_vars_args} $*"
-  echo "${cmd}"
-  echo
-
-  $cmd
-}
-export -f gaedev
 
 alias autotest="until ag -l --python --ignore-dir lib --ignore-dir lib.dev --ignore-dir test/lib | entr -d green -l -vv test; do sleep 1; done"
 
