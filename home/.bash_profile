@@ -238,10 +238,6 @@ if [ "$(command -v colordiff)" != '' ]; then
   alias diff='colordiff'
 fi
 
-# fixes the weird require issue with veewee/vagrant
-# http://www.uncompiled.com/hacky-quick-fix-for-vagrant-veewee-on-mac-os
-#export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
-
 # To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded)
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export RUBY_CONFIGURE_OPTS
