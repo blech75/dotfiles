@@ -1,186 +1,136 @@
-ack 3.4.0
-aom 2.0.1_1 3.0.0
-apr 1.7.0_2 1.7.0 1.7.0_1
+ack 3.5.0
+apr 1.7.0_2
 apr-util 1.6.1_3
 argon2 20190702_1
-asdf 0.8.0_1
 aspell 0.60.8
-autoconf 2.69 2.71
-automake 1.16.3_1 1.16.3
-awscli 2.1.34
-bash 5.1.4
+autoconf 2.71
+awscli 2.2.25
+bash 5.1.8
 bash-completion 1.3_3
 bash-git-prompt 2.7.1
-bat 0.17.1
-bdw-gc 8.0.4_2
+bat 0.18.2
 berkeley-db 18.1.40
-binutils 2.35.1_1
+binutils 2.37
 brew-cask-completion 2.1_1
-brew-php-switcher 2.3
 brotli 1.0.9
+bzip2 1.0.8
 c-ares 1.17.1
-cairo 1.16.0_5 1.16.0_4
+cairo 1.16.0_5
 colordiff 1.0.19
-composer 1.10.13
+composer 2.1.5
 coreutils 8.32
-curl 7.76.0
+curl 7.78.0
 dashing 0.4.0_1
-dav1d 0.8.2 0.8.1
 diffutils 3.7
-elixir 1.11.4
-emojify 1.0.2
-entr 4.7
-erlang 23.3.1
-fastly 0.24.1
-ffmpeg 4.3.2_4
-flac 1.3.3
+docker 20.10.6
+dolt 0.26.11
+entr 5.0
 fontconfig 2.13.1
-fortio 1.11.4
-freetds 1.2.18
-freetype 2.10.4
-frei0r 1.7.0
+freetds 1.3 1.2.21
+freetype 2.10.4 2.11.0
 fribidi 1.0.10
-fswatch 1.15.0
-gd 2.3.0 2.3.2
-gdbm 1.18.1_1 1.19
-gdk-pixbuf 2.42.4 2.42.2
+gd 2.3.2
+gdbm 1.20
+gdk-pixbuf 2.42.6
 geoip 1.6.12
 gettext 0.21
-gh 1.5.0
-giflib 5.2.1
-git 2.30.0
-git-extras 6.1.0
-git-plus 0.4.6_1
-givegif 1.0.0.0
-glib 2.68.0 2.66.4_1
+gh 1.13.1
+git 2.32.0_1
+git-extras 6.2.0
+git-plus 0.4.7
+glib 2.68.3
 gmp 6.2.1
-gnutls 3.6.15
-go 1.15.5
-gobject-introspection 1.66.1_1 1.68.0
+gobject-introspection 1.68.0_1
 graphite2 1.3.14
-graphviz 2.47.0
-gts 0.7.6_2
-guile 3.0.5
-harfbuzz 2.8.0
-highlight 3.59_1
+harfbuzz 2.8.1
+homeshick 2.0.0
 htop 3.0.5
+httpd 2.4.48
 httrack 3.49.2_1
 hub 2.14.2
-icu4c 68.2
+icu4c 69.1
 iftop 1.0pre4
-ios-webkit-debug-proxy 1.8.8
-iperf3 3.9
-ipython@5 5.8.0
-jansson 2.13.1
-jasper 2.0.23 2.0.27
+iperf3 3.10.1
+jd 1.4.0
 jemalloc 5.2.1_1
 jpeg 9d
 jq 1.6
 json-c 0.15
-krb5 1.19.1 1.18.3
-lame 3.100
-leptonica 1.80.0
+krb5 1.19.2 1.19.1
 lesspipe 1.85
-libass 0.15.0
-libbluray 1.2.1
-libcroco 0.6.13_1
 libev 4.33
 libevent 2.1.12
-libffi 3.3_2 3.3_3
-libidn 1.36
-libidn2 2.3.0
-libimobiledevice 1.3.0
-libmaxminddb 1.4.3
+libffi 3.3_3
+libidn2 2.3.1 2.3.2
+libmaxminddb 1.5.2
 libmetalink 0.1.3
-libogg 1.3.4
-libplist 2.2.0
 libpng 1.6.37
-libpq 13.1 13.2
+libpq 13.3
 libpthread-stubs 0.4
-librsvg 2.50.3
-libsamplerate 0.1.9_1
-libsndfile 1.0.31
+librsvg 2.50.7
 libsodium 1.0.18_1
-libsoxr 0.1.3
 libssh2 1.9.0_1
-libtasn1 4.16.0_1 4.16.0
-libtiff 4.2.0
-libtool 2.4.6_3 2.4.6_2
+libtiff 4.3.0
+libtool 2.4.6_4 2.4.6_3
 libunistring 0.9.10
-libusb 1.0.24
-libusbmuxd 2.0.2
-libvidstab 1.1.0
-libvorbis 1.3.7
-libvpx 1.9.0 1.10.0
-libx11 1.7.0
+libuv 1.41.0 1.42.0
+libx11 1.7.2
 libxau 1.0.9
 libxcb 1.14_1
 libxdmcp 1.1.3
 libxext 1.3.4
 libxrender 0.9.10
 libyaml 0.2.5
-libzip 1.7.3
-links 2.22
-little-cms2 2.11 2.12
-lua 5.4.3 5.4.2
+libzip 1.8.0
+links 2.23
+lua 5.4.3
 lynx 2.8.9rel.1_1
+lz4 1.9.3
 lzo 2.10
 m4 1.4.18
-memtester 4.5.0
-mongodb 4.0.3_1
+mas 1.8.2
+memtester 4.5.1
 mpdecimal 2.5.1
 mtr 0.94
 multitail 6.5.0
-mysql-client 8.0.23
-mysql@5.7 5.7.32
-nativefier 43.0.0
-ncdu 1.15.1
+mysql-client 8.0.26
+mysql-client@5.7 5.7.32
+mysql@5.7 5.7.35
+nativefier 45.0.0
 ncftp 3.2.6
 ncurses 6.2
-netpbm 10.86.18 10.86.20
-nettle 3.7 3.7.2
-nghttp2 1.43.0
-nginx 1.19.8
-node 15.12.0
-node-build 4.9.36
-node-build-update-defs 2.9.4
+nghttp2 1.43.0 1.44.0
+node 16.6.0
+node-build 4.9.48
 nodenv 1.4.0
 nodenv-aliases 2.0.2
 nodenv-package-json-engine 3.0.3
 nodenv-package-rehash 1.4.0
 nodenv-vars 1.2.0
 ntopng 4.2_1
-oniguruma 6.9.6
-opencore-amr 0.1.5
-openjdk 15.0.1
-openjpeg 2.4.0
-openldap 2.4.58 2.4.57
-openssl@1.1 1.1.1i 1.1.1k 1.1.1j
-opus 1.3.1
-p11-kit 0.23.22
-p7zip 16.02_2
-packer 1.6.5
-pandoc 2.11.2
-pango 1.48.4
+oniguruma 6.9.7.1
+openjdk 16.0.1
+openldap 2.5.5 2.5.6
+openssl@1.1 1.1.1k
+p7zip 17.04
+pandoc 2.14.1
+pango 1.48.5
 par2 0.8.1
 patchutils 0.4.2
-pcre 8.44
-pcre2 10.36
-perl 5.32.1 5.32.1_1
-php 8.0.3
-php@7.2 7.2.34_2
-php@7.4 7.4.16
+pcre 8.45
+pcre2 10.37_1
+perl 5.34.0
+php@7.4 7.4.22
+phpbrew 1.27.0
 pixman 0.40.0
 pkg-config 0.29.2_3
-postgresql@9.6 9.6.21
 proxychains-ng 4.14
-pyenv 1.2.24.1
+pv 1.6.6
+pyenv 2.0.4
 pyenv-virtualenv 1.1.5
 pyenv-which-ext 0.0.2
-python@2 2.7.17
-python@3.8 3.8.9
-python@3.9 3.9.2_4
-rav1e 0.4.1 0.4.0
+python@3.8 3.8.10
+python@3.9 3.9.6
 rbenv 1.1.2
 rbenv-aliases 1.1.0_1
 rbenv-bundler-ruby-version 1.0.0_1
@@ -188,52 +138,38 @@ rbenv-use 1.0.0_1
 rbenv-vars 1.2.0_1
 rbenv-whatis 1.0.0_1
 readline 8.1
-redis 6.2.1
+redis 6.2.5
+ripgrep 13.0.0
+ripgrep-all 0.9.6
 rrdtool 1.7.2_1
 rtmpdump 2.4+20151223_1
-rubberband 1.9.0 1.9.1
-ruby 3.0.0_1
-ruby-build 20201210
-s3cmd 2.1.0_2
-sdl2 2.0.14_1
-shellcheck 0.7.1
-siege 4.0.8
-snappy 1.1.8
-speex 1.2.0
-sqlite 3.35.2 3.35.3 3.34.0
-srt 1.4.2
+ruby 3.0.2
+ruby-build 20210801
+s3cmd 2.1.0_3
+shellcheck 0.7.2
+siege 4.1.1
+six 1.16.0_1
+sqlite 3.36.0
+subversion 1.14.1_2
 tcl-tk 8.6.11_1
 terminal-notifier 2.0.0
-tesseract 4.1.1
 the_silver_searcher 2.2.0
-theora 1.1.1
-tidy-html5 5.6.0
-tmux 3.1c_1
+tidy-html5 5.8.0
+tmux 3.2
 tmux-mem-cpu-load 3.4.0
 tree 1.8.0
-unbound 1.13.1 1.13.0
-uni2ascii 4.18
-unison 2.51.3
-unixodbc 2.3.9
-unzip 6.0_6
-utf8proc 2.6.0
-vagrant-completion 2.2.14
-vim 8.2.2650
-w3m 0.5.3_7
-watchman 4.9.0_5
-wdiff 1.2.2_2
+unison 2.51.4
+unixodbc 2.3.9_1
+unzip 6.0_7
+utf8proc 2.6.1
+vim 8.2.3250
 webp 1.2.0
 wget 1.21.1
-wp-cli 2.4.0
-wp-cli-completion 2.4.1
-wxmac 3.0.5.1_1
-x264 r3043 r3048
-x265 3.5 3.4_2
-xorgproto 2021.3
-xvid 1.3.7
+wp-cli 2.5.0
+wp-cli-completion 2.5.0
+xorgproto 2021.4
 xz 5.2.5
 yarn 1.22.10
-youtube-dl 2021.4.1
-zeromq 4.3.4
-zimg 3.0.1
-zstd 1.4.8 1.4.9
+yarn-completion 0.17.0
+youtube-dl 2021.6.6
+zstd 1.5.0
