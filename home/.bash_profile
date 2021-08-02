@@ -101,6 +101,7 @@ function vagrant_local_status() {
 if [ -f "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   export GIT_PROMPT_THEME=Custom
   export __GIT_PROMPT_DIR=${brew_prefix}/opt/bash-git-prompt/share
+  # shellcheck disable=SC1091
   source "${brew_prefix}/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
@@ -248,7 +249,8 @@ fi
 #export RUBYLIB=$RUBYLIB:/opt/local/lib/ruby/gems/1.8/gems/veewee-0.2.3/lib/:/opt/local/lib/ruby/gems/1.8/gems/virtualbox-0.9.2/lib/
 
 # To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded)
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CONFIGURE_OPTS
 
 # rbenv setup
 # rbenv is installed via brew
@@ -271,8 +273,9 @@ if [ "$(which pyenv)" != '' ]; then
 fi
 
 # bash completion setup (homebrew)
-if [ -f ${brew_prefix}/etc/bash_completion ]; then
-  source ${brew_prefix}/etc/bash_completion
+if [ -f "${brew_prefix}/etc/bash_completion" ]; then
+  # shellcheck disable=SC1091
+  source "${brew_prefix}/etc/bash_completion"
 fi
 
 # enable npm autocomplete
@@ -328,7 +331,9 @@ export PATH="${HOME}/.cabal/bin:${PATH}"
 export PATH="${brew_prefix}/opt/ipython@5/bin:$PATH"
 
 google_cloud_sdk="${brew_prefix}/Caskroom/google-cloud-sdk/latest"
+# shellcheck disable=SC1091
 source "${google_cloud_sdk}/google-cloud-sdk/path.bash.inc"
+# shellcheck disable=SC1091
 source "${google_cloud_sdk}/google-cloud-sdk/completion.bash.inc"
 
 # https://cloud.google.com/appengine/docs/standard/python/tools/remoteapi#using_the_remote_api_in_a_local_client
@@ -384,6 +389,8 @@ export -f gaedev
 
 alias autotest="until ag -l --python --ignore-dir lib --ignore-dir lib.dev --ignore-dir test/lib | entr -d green -l -vv test; do sleep 1; done"
 
+# configure completion for green (python test runner)
+# shellcheck disable=SC1090
 which green >&/dev/null && source "$(green --completion-file)"
 
 export PYTHONDONTWRITEBYTECODE=1
