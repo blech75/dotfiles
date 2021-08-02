@@ -212,6 +212,7 @@ alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resour
 # unix shortcuts
 alias rm='rm -i'
 alias rmds='find . -name \.DS_Store -delete'
+alias rmpyc='find . -name "*.pyc" -delete'
 #alias flushcache='dscacheutil -flushcache'
 
 # git shortcuts
