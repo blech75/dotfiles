@@ -1,10 +1,16 @@
 # shellcheck shell=bash
 
 # https://github.com/andsens/homeshick/wiki/Installation
-# TODO: add check to see if local has changes; report them; nag to commit
 #
-# shellcheck disable=SC1090
-source "${HOME}/.homesick/repos/homeshick/homeshick.sh"
+# export HOMESHICK_DIR="${HOME}/.homesick/repos/homeshick"
+export HOMESHICK_DIR=/usr/local/opt/homeshick
+# shellcheck disable=SC1091
+source "${HOMESHICK_DIR}/homeshick.sh"
+
+# enable homeshick autocompletion
+#source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+# shellcheck disable=SC1091
+source "${HOMESHICK_DIR}/etc/bash_completion.d/homeshick-completion.bash"
 
 # grab homebrew prefix if it's installed
 if [ "$(command -v brew)" != '' ]; then
@@ -289,9 +295,6 @@ fi
 # function npm-exec() {
 #   $(npm bin)/$*
 # }
-
-# enable homeshick autocompletion
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 # remind me to keep my dotfiles up to date daily
 homeshick --quiet check dotfiles --local-only
