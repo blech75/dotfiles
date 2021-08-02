@@ -346,3 +346,9 @@ which green >&/dev/null && source "$(green --completion-file)"
 # runner and assign completions to that.)
 #
 complete -p green >&/dev/null && complete -F _green_completion ./scripts/test
+
+# useful for testing shell interactions in a "clean" environment
+#
+CLEANPATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+# shellcheck disable=SC2139
+alias cleanenv="env -i HOME=\"\$HOME\" PATH=\"$CLEANPATH\" TERM=\"\$TERM\" /bin/bash --noprofile --norc"
